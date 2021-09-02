@@ -17,11 +17,15 @@ public class Place_Tower : MonoBehaviour
     /// </summary>
     private GameObject tower;
     /// <summary>
+    /// The game manager used to access the players gold
+    /// </summary>
+    private Game_Manager gameManager;
+    /// <summary>
     /// Mainly used to see if the marker needs to be redrawn
     /// </summary>
     private void FixedUpdate()
     {
-        if (CanPlaceTower())
+        if (tower == null)
         {
             gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
@@ -38,12 +42,27 @@ public class Place_Tower : MonoBehaviour
         //creates a tower of the towerPrefab at the location of the marker and makes it the 
         //child of the marker.This is done to make turning the sprite on and off easier
         //among other things
-        tower = (GameObject)
-            Instantiate(towerPrefab,
-            transform.position,
-            Quaternion.identity,gameObject.transform);
-
-
+        if (CanPlaceTower())
+        {
+            tower = (GameObject)
+                Instantiate(towerPrefab,
+                transform.position,
+                Quaternion.identity, gameObject.transform);
+            gameManager.Gold -= tower.GetComponent<Tower_Data>().CurrentLevel.cost;
+        }
+        else if (canUpgradeTower())
+        {
+            tower.GetComponent<Tower_Data>().IncreaseLevel();
+            gameManager.Gold -= tower.GetComponent<Tower_Data>().CurrentLevel.cost;
+        }
+    }
+    /// <summary>
+    /// called when the game tower spawn locations are spawned
+    /// </summary>
+    private void Start()
+    {
+        //finds the empty game object named Game Manager then selects its Game_Manager script that's attached
+        gameManager = gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
     }
     /// <summary>
     /// A simple function that sees if the tower game object is emtpy.
@@ -51,6 +70,24 @@ public class Place_Tower : MonoBehaviour
     /// <returns>a bool if you can place a tower or not</returns>
     private bool CanPlaceTower()
     {
-        return tower == null;
+        int cost = towerPrefab.GetComponent<Tower_Data>().levels[0].cost;
+        return tower == null && gameManager.Gold >= cost;
+    }
+    /// <summary>
+    /// Determines if a tower is upgradable
+    /// </summary>
+    /// <returns>true if the tower can be upgraded and false if not</returns>
+    private bool canUpgradeTower()
+    {
+        if (towerPrefab != null)
+        {
+            Tower_Data towerData = towerPrefab.GetComponent<Tower_Data>();
+            Tower_Level nextLevel = towerData.getNextLevel();
+            if (nextLevel != null)
+            {
+                return gameManager.Gold >= nextLevel.cost;
+            }
+        }
+        return false;
     }
 }
