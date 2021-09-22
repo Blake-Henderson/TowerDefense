@@ -20,6 +20,14 @@ public class Tower_Level
     /// The way the tower looks
     /// </summary>
     public GameObject visual;
+    /// <summary>
+    /// The projectile the tower fires
+    /// </summary>
+    public GameObject bullet;
+    /// <summary>
+    /// The fire rate of the tower
+    /// </summary>
+    public float fireRate;
 }
 
 
@@ -75,10 +83,12 @@ public class Tower_Data : MonoBehaviour
     {
         //where the current level is in the list of levels
         int currentLevelIndex = levels.IndexOf(currentLevel);
+        Debug.Log(currentLevelIndex);
         //the tower level that is the highest
         int maxLevelIndex = levels.Count - 1;
         if (currentLevelIndex < maxLevelIndex)
         {
+            //Debug.Log(currentLevelIndex);
             return levels[currentLevelIndex + 1];
         }
         else
@@ -92,8 +102,10 @@ public class Tower_Data : MonoBehaviour
     public void IncreaseLevel()
     {
         int currentLevelIndex = levels.IndexOf(currentLevel);
+        Debug.Log(currentLevelIndex);
         if (currentLevelIndex < levels.Count - 1)
         {
+            //Debug.Log(currentLevelIndex);
             CurrentLevel = levels[currentLevelIndex + 1];
         }
     }

@@ -109,6 +109,8 @@ GameObject:
   - component: {fileID: 5906717486857474838}
   - component: {fileID: 8307679362855308289}
   - component: {fileID: 7808324383037064234}
+  - component: {fileID: -2754044338514320596}
+  - component: {fileID: 2458400423954551587}
   m_Layer: 0
   m_Name: Rainbow Slime
   m_TagString: Runner
@@ -146,7 +148,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
-  speed: 2
 --- !u!50 &8307679362855308289
 Rigidbody2D:
   serializedVersion: 4
@@ -184,6 +185,35 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
   m_Radius: 0.5
+--- !u!114 &-2754044338514320596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117184512330957778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9837d7dcf7a9e2442af84fa63b2e54ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2458400423954551587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117184512330957778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 824d7e9515405f4498777d59a809c424, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  reward: 25
+  speed: 2
+  health: 100
+  spawnTime: 3
+  path: {fileID: 0}
 --- !u!1 &2798993332535966316
 GameObject:
   m_ObjectHideFlags: 0
@@ -210,7 +240,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2798993332535966316}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.625, y: 0.4, z: -4}
+  m_LocalPosition: {x: -0.625, y: 0.6, z: -1}
   m_LocalScale: {x: 125, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4366476984059022804}
@@ -253,11 +283,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 134200679
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: ef6d49d7a90c443479917babde83b635, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -279,7 +309,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0824245aac90aef4d84569b10d7268f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 100
   currentHealth: 100
 --- !u!1 &5304439855281884164
 GameObject:
@@ -306,7 +335,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5304439855281884164}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.4, z: -4}
+  m_LocalPosition: {x: 0, y: 0.6, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4366476984059022804}
@@ -349,11 +378,11 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 134200679
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0d403a7985e55bf45bd00f011e07da92, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0

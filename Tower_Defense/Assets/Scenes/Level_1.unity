@@ -22245,9 +22245,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc112d5d64fe964e86b47f8f70473f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  startingGold: 500
   goldText: {fileID: 82705932}
   waveText: {fileID: 899597178}
-  livesText: {fileID: 0}
+  livesText: {fileID: 1492315809}
   gameOver: 0
 --- !u!1 &323532294
 GameObject:
@@ -23499,13 +23500,13 @@ MonoBehaviour:
   - {fileID: 916721863}
   - {fileID: 954257686}
   waves:
-  - enemyPrefab: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+  - enemyPrefab: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
     spawnInterval: 1
     maxEnemies: 10
-  - enemyPrefab: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-    spawnInterval: 0.5
-    maxEnemies: 12
-  - enemyPrefab: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+  - enemyPrefab: {fileID: 8095348619692737499, guid: 2f4b6c003b1c1174eb37a8e1c443702f, type: 3}
+    spawnInterval: 3
+    maxEnemies: 5
+  - enemyPrefab: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
     spawnInterval: 0.5
     maxEnemies: 15
   timeBetweenWaves: 5
@@ -23695,7 +23696,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'LIVES:'
+  m_text: LIVES
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

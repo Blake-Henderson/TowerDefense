@@ -24,10 +24,11 @@ public class Road_Enemy_AI : MonoBehaviour
     /// <summary>
     /// The speed of the enemy
     /// </summary>
-    public float speed = 1.0f;
+    private float speed = 1.0f;
     private void Start()
     {
         lastWaypointSwitchTime = Time.time;
+        speed = gameObject.GetComponent<Enemy_Data>().speed;
     }
     private void Update()
     {
@@ -62,7 +63,7 @@ public class Road_Enemy_AI : MonoBehaviour
                 Destroy(gameObject);
 
                 Game_Manager gameManager =
-                    GameObject.Find("GameManager").GetComponent<Game_Manager>();
+                    GameObject.Find("Game Manager").GetComponent<Game_Manager>();
                 gameManager.Lives -= 1;
             }
         }
@@ -86,5 +87,20 @@ public class Road_Enemy_AI : MonoBehaviour
             {
                 sprite.flipX = false;
             }
+    }
+
+    public float DistanceToGoal()
+    {
+        float distance = 0;
+        distance += Vector2.Distance(
+            gameObject.transform.position,
+            waypoints[currentWaypoint + 1].transform.position);
+        for (int i = currentWaypoint + 1; i < waypoints.Length - 1; i++)
+        {
+            Vector3 startPosition = waypoints[i].transform.position;
+            Vector3 endPosition = waypoints[i + 1].transform.position;
+            distance += Vector2.Distance(startPosition, endPosition);
+        }
+        return distance;
     }
 }

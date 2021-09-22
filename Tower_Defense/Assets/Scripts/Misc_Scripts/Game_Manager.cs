@@ -9,6 +9,7 @@ using UnityEngine.UI;
 using TMPro;
 public class Game_Manager : MonoBehaviour
 {
+    public int startingGold = 500;
     /// <summary>
     /// The text mesh pro text that displays the gold of the player
     /// </summary>
@@ -21,6 +22,9 @@ public class Game_Manager : MonoBehaviour
     /// The text mesh pro text that displays the current health
     /// </summary>
     public TMP_Text livesText;
+
+    public GameObject winPanel;
+    public GameObject losePanel;
     /// <summary>
     /// The gold the player has
     /// </summary>
@@ -70,7 +74,7 @@ public class Game_Manager : MonoBehaviour
         set
         {
             lives = value;
-            livesText.text = "Lives: " + lives;
+            livesText.text = "LIVES: " + lives;
             if (lives <= 0 && !gameOver)
             {
                 gameOver = true;
@@ -83,8 +87,12 @@ public class Game_Manager : MonoBehaviour
     public bool gameOver = false;
     private void Start()
     {
-        Gold = 500;
+        Gold = startingGold;
         Wave = 0;
-        lives = 10;
+        Lives = 10;
+    }
+    private void Update()
+    {
+        
     }
 }

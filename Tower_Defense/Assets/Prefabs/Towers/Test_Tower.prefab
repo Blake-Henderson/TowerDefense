@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 576751229270940369}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -3}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 710246750200503428}
@@ -93,6 +93,7 @@ GameObject:
   - component: {fileID: 710246750200503428}
   - component: {fileID: -7264226734163205009}
   - component: {fileID: 3029560762207665432}
+  - component: {fileID: -8153137967602783920}
   m_Layer: 2
   m_Name: Test_Tower
   m_TagString: Untagged
@@ -132,10 +133,16 @@ MonoBehaviour:
   levels:
   - cost: 100
     visual: {fileID: 7916227723571108296}
+    bullet: {fileID: 8626795313380882085, guid: 86d9ed0bbf950ed469b4f5a534d3b5dd, type: 3}
+    fireRate: 1
   - cost: 150
     visual: {fileID: 5798562481906384073}
+    bullet: {fileID: 478665847115289724, guid: 66a26ff2b11e35e4b81b4f36ea259d82, type: 3}
+    fireRate: 0.75
   - cost: 250
     visual: {fileID: 576751229270940369}
+    bullet: {fileID: 1223010055817867045, guid: 062f61f48c0e0d8459be84c27037c175, type: 3}
+    fireRate: 0.75
 --- !u!58 &3029560762207665432
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -151,7 +158,20 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
-  m_Radius: 3
+  m_Radius: 3.5
+--- !u!114 &-8153137967602783920
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710246750200503429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ce969e125c9e94d95ef7010b435e6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!1 &5798562481906384073
 GameObject:
   m_ObjectHideFlags: 0
@@ -177,7 +197,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5798562481906384073}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -3}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 710246750200503428}
@@ -259,7 +279,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7916227723571108296}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.5, z: -3}
+  m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 710246750200503428}
