@@ -13,7 +13,7 @@ public class Wave_Manager : MonoBehaviour
         /// <summary>
         /// each entry is an individual enemy prefab
         /// </summary>
-        public List<GameObject> eneimies;
+        public List<Spawn_Data> enemies;
         public int reward;
     }
     /// <summary>
@@ -46,32 +46,38 @@ public class Wave_Manager : MonoBehaviour
         if (currentWave < waves.Length)
         {
             float timeInterval = Time.time - lastSpawnTime;
-            float spawnInterval = waves[currentWave].eneimies[currentEnemy].GetComponent<Enemy_Data>().spawnTime;
-            if ((timeInterval > spawnInterval) && currentEnemy < waves[currentWave].eneimies.Count)
+            if (currentEnemy < waves[currentWave].enemies.Count)
             {
-                //spawn a runner enemy
-                if (waves[currentWave].eneimies[currentEnemy].gameObject.tag.Equals("Runner")){
-                    lastSpawnTime = Time.time;
+                float spawnInterval = waves[currentWave].enemies[currentEnemy].spawnTime;
 
-                    GameObject newEnemy = (GameObject) Instantiate(waves[currentWave].eneimies[currentEnemy],
-                        waves[currentWave].eneimies[currentEnemy].GetComponent<Enemy_Data>().path.waypoints[0].transform);
-                    newEnemy.GetComponent<Road_Enemy_AI>().waypoints =
-                        waves[currentWave].eneimies[currentEnemy].GetComponent<Enemy_Data>().path.waypoints;
-                }
-                //spawn a breaker enemey
-                else
+                if ((timeInterval > spawnInterval))
                 {
-                    //do nothing for now
+                    //spawn a runner enemy
+                    if (waves[currentWave].enemies[currentEnemy].enemy.gameObject.tag.Equals("Runner"))
+                    {
+                        lastSpawnTime = Time.time;
+
+                        GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemies[currentEnemy].enemy,
+                            waves[currentWave].enemies[currentEnemy].path.waypoints[0].transform);
+                        newEnemy.GetComponent<Road_Enemy_AI>().waypoints =
+                            waves[currentWave].enemies[currentEnemy].path.waypoints;
+                    }
+                    //spawn a breaker enemey
+                    else
+                    {
+                        //do nothing for now
+                    }
+                    currentEnemy++;
                 }
             }
         }
-        if (currentEnemy == waves[currentWave].eneimies.Count &&
+        if (currentEnemy == waves[currentWave].enemies.Count &&
             GameObject.FindGameObjectWithTag("Runner") == null &&
             GameObject.FindGameObjectWithTag("Breaker") == null)
         {
             gameManager.Gold += waves[currentWave].reward;
-            gameManager.Wave++;       
-            if(currentWave == waves.Length)
+            gameManager.Wave++;
+            if (currentWave == waves.Length)
             {
                 //win
             }

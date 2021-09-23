@@ -191,7 +191,7 @@ GameObject:
   - component: {fileID: 1625760919780137032}
   - component: {fileID: 7345573653303841334}
   - component: {fileID: 9128912729561003866}
-  - component: {fileID: 5773720853990449699}
+  - component: {fileID: 5692469919913466070}
   m_Layer: 0
   m_Name: Mud Golem
   m_TagString: Runner
@@ -278,7 +278,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9837d7dcf7a9e2442af84fa63b2e54ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5773720853990449699
+--- !u!114 &5692469919913466070
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -290,11 +290,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824d7e9515405f4498777d59a809c424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 50
-  speed: 0.75
+  reward: 75
+  speed: 2
   health: 250
-  spawnTime: 5
-  path: {fileID: 0}
 --- !u!1 &8928354379546387681
 GameObject:
   m_ObjectHideFlags: 0

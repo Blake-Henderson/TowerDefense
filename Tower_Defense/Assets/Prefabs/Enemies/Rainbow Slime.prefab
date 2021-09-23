@@ -110,7 +110,7 @@ GameObject:
   - component: {fileID: 8307679362855308289}
   - component: {fileID: 7808324383037064234}
   - component: {fileID: -2754044338514320596}
-  - component: {fileID: 2458400423954551587}
+  - component: {fileID: -6626378244195345681}
   m_Layer: 0
   m_Name: Rainbow Slime
   m_TagString: Runner
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9837d7dcf7a9e2442af84fa63b2e54ea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &2458400423954551587
+--- !u!114 &-6626378244195345681
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,11 +209,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 824d7e9515405f4498777d59a809c424, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  reward: 25
-  speed: 2
+  reward: 50
+  speed: 3
   health: 100
-  spawnTime: 3
-  path: {fileID: 0}
 --- !u!1 &2798993332535966316
 GameObject:
   m_ObjectHideFlags: 0
