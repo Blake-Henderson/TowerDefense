@@ -47,7 +47,9 @@ Temp/
 UserSettings/
 build/
 Build/
-
+.vs/
+Logs/
+obj/
 InitCodeMarker
 .vsconfig
 

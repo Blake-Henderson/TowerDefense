@@ -291,7 +291,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 25
-  speed: 5
+  speed: 3
   health: 75
 --- !u!1 &6669979875373401794
 GameObject:
