@@ -22,8 +22,9 @@ public class Game_Manager : MonoBehaviour
     /// The text mesh pro text that displays the current health
     /// </summary>
     public TMP_Text livesText;
-
-    public GameObject winPanel;
+    /// <summary>
+    /// The panel that holds the lose text
+    /// </summary>
     public GameObject losePanel;
     /// <summary>
     /// The gold the player has
@@ -78,6 +79,7 @@ public class Game_Manager : MonoBehaviour
             if (lives <= 0 && !gameOver)
             {
                 gameOver = true;
+                losePanel.SetActive(true);
             }
         }
     }

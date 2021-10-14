@@ -1,7 +1,7 @@
 //This script is a modified version of the placemonster code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:9/15/21
+//Date:10/13/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -24,7 +24,6 @@ public class Fire_At_Enemies : MonoBehaviour
     {
 
         GameObject target = null;
-        // 1
         float minimalEnemyDistance = float.MaxValue;
         foreach (GameObject enemy in enemiesInRange)
         {
@@ -35,7 +34,6 @@ public class Fire_At_Enemies : MonoBehaviour
                 minimalEnemyDistance = distanceToGoal;
             }
         }
-        // 2
         if (target != null)
         {
             if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)

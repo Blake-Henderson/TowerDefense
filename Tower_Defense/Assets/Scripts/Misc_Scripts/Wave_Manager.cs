@@ -21,6 +21,10 @@ public class Wave_Manager : MonoBehaviour
     /// </summary>
     public Wave[] waves;
     /// <summary>
+    /// The panel that holds the win text
+    /// </summary>
+    public GameObject winPanel;
+    /// <summary>
     /// The game manager for the level
     /// </summary>
     private Game_Manager gameManager;
@@ -36,53 +40,59 @@ public class Wave_Manager : MonoBehaviour
     void Start()
     {
         lastSpawnTime = Time.time;
-        gameManager = gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        int currentWave = gameManager.Wave;
-        if (currentWave < waves.Length)
+        if (!gameManager.gameOver)
         {
-            float timeInterval = Time.time - lastSpawnTime;
-            if (currentEnemy < waves[currentWave].enemies.Count)
+            int currentWave = gameManager.Wave;
+            if (currentWave < waves.Length)
             {
-                float spawnInterval = waves[currentWave].enemies[currentEnemy].spawnTime;
-
-                if ((timeInterval > spawnInterval))
+                float timeInterval = Time.time - lastSpawnTime;
+                if (currentEnemy < waves[currentWave].enemies.Count)
                 {
-                    //spawn a runner enemy
-                    if (waves[currentWave].enemies[currentEnemy].enemy.gameObject.tag.Equals("Runner"))
-                    {
-                        lastSpawnTime = Time.time;
+                    float spawnInterval = waves[currentWave].enemies[currentEnemy].spawnTime;
 
-                        GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemies[currentEnemy].enemy,
-                            waves[currentWave].enemies[currentEnemy].path.waypoints[0].transform);
-                        newEnemy.GetComponent<Road_Enemy_AI>().waypoints =
-                            waves[currentWave].enemies[currentEnemy].path.waypoints;
-                    }
-                    //spawn a breaker enemey
-                    else
+                    if ((timeInterval > spawnInterval))
                     {
-                        //do nothing for now
+                        //spawn a runner enemy
+                        if (waves[currentWave].enemies[currentEnemy].enemy.gameObject.tag.Equals("Runner"))
+                        {
+                            lastSpawnTime = Time.time;
+
+                            GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemies[currentEnemy].enemy,
+                                waves[currentWave].enemies[currentEnemy].path.waypoints[0].transform);
+                            newEnemy.GetComponent<Road_Enemy_AI>().waypoints =
+                                waves[currentWave].enemies[currentEnemy].path.waypoints;
+                        }
+                        //spawn a breaker enemey
+                        else
+                        {
+                            //do nothing for now
+                        }
+                        currentEnemy++;
                     }
-                    currentEnemy++;
                 }
             }
-        }
-        if (currentEnemy == waves[currentWave].enemies.Count &&
-            GameObject.FindGameObjectWithTag("Runner") == null &&
-            GameObject.FindGameObjectWithTag("Breaker") == null)
-        {
-            gameManager.Gold += waves[currentWave].reward;
-            gameManager.Wave++;
-            if (currentWave == waves.Length)
+            if (currentEnemy == waves[currentWave].enemies.Count &&
+                GameObject.FindGameObjectWithTag("Runner") == null &&
+                GameObject.FindGameObjectWithTag("Breaker") == null)
             {
-                //win
+                gameManager.Gold += waves[currentWave].reward;
+                if (currentWave < waves.Length)
+                {
+                    gameManager.Wave++;
+                }
+                else
+                {
+                    winPanel.SetActive(true);
+                }
+                currentEnemy = 0;
+                lastSpawnTime = Time.time;
             }
-            currentEnemy = 0;
-            lastSpawnTime = Time.time;
         }
     }
 }

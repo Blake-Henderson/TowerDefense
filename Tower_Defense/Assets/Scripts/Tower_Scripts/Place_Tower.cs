@@ -1,7 +1,7 @@
 //This script is a modified version of the placemonster code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:8/25/21
+//Date:10/13/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -62,7 +62,7 @@ public class Place_Tower : MonoBehaviour
     private void Start()
     {
         //finds the empty game object named Game Manager then selects its Game_Manager script that's attached
-        gameManager = gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
+        gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
     }
     /// <summary>
     /// A simple function that sees if the tower game object is emtpy.
@@ -85,6 +85,7 @@ public class Place_Tower : MonoBehaviour
             Tower_Level nextLevel = towerData.getNextLevel();
             if (nextLevel != null)
             {
+                //Debug.Log(nextLevel.cost);
                 return gameManager.Gold >= nextLevel.cost;
             }
         }

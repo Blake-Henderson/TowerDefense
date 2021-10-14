@@ -139,7 +139,7 @@ MonoBehaviour:
     visual: {fileID: 5798562481906384073}
     bullet: {fileID: 478665847115289724, guid: 66a26ff2b11e35e4b81b4f36ea259d82, type: 3}
     fireRate: 0.75
-  - cost: 250
+  - cost: 200
     visual: {fileID: 576751229270940369}
     bullet: {fileID: 1223010055817867045, guid: 062f61f48c0e0d8459be84c27037c175, type: 3}
     fireRate: 0.75

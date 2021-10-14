@@ -1,7 +1,7 @@
 //This script is a modified version of the placemonster code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:8/25/21
+//Date:10/13/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -38,6 +38,10 @@ public class Tower_Data : MonoBehaviour
     /// </summary>
     public List<Tower_Level> levels;
     /// <summary>
+    /// The index of the current level
+    /// </summary>
+    public int currentLevelIndex = 0;
+    /// <summary>
     /// The current level of the tower
     /// </summary>
     private Tower_Level currentLevel;
@@ -55,7 +59,6 @@ public class Tower_Data : MonoBehaviour
             //set value of currentLevel
             currentLevel = value;
             //get index of new level
-            int currentLevelIndex = levels.IndexOf(currentLevel);
             //get the correct visual
             GameObject levelVisuals = levels[currentLevelIndex].visual;
             //turns on the correct visual and turns off the remaining ones
@@ -75,20 +78,19 @@ public class Tower_Data : MonoBehaviour
             }
         }
     }
+    private Game_Manager gameManager;
     /// <summary>
     /// Figures out the next level of the tower if there is one
     /// </summary>
     /// <returns>Returns the next tower level or null if tower is max level</returns>
     public Tower_Level getNextLevel()
     {
-        //where the current level is in the list of levels
-        int currentLevelIndex = levels.IndexOf(currentLevel);
-        Debug.Log(currentLevelIndex);
+        //Debug.Log(currentLevelIndex);
         //the tower level that is the highest
         int maxLevelIndex = levels.Count - 1;
         if (currentLevelIndex < maxLevelIndex)
         {
-            //Debug.Log(currentLevelIndex);
+            Debug.Log("getNextLevel currentLevel" + currentLevelIndex);
             return levels[currentLevelIndex + 1];
         }
         else
@@ -101,18 +103,19 @@ public class Tower_Data : MonoBehaviour
     /// </summary>
     public void IncreaseLevel()
     {
-        int currentLevelIndex = levels.IndexOf(currentLevel);
-        Debug.Log(currentLevelIndex);
-        if (currentLevelIndex < levels.Count - 1)
+        if (currentLevelIndex < levels.Count - 1 && gameManager.Gold >= levels[currentLevelIndex+1].cost)
         {
-            //Debug.Log(currentLevelIndex);
-            CurrentLevel = levels[currentLevelIndex + 1];
+            Debug.Log("preIncreaseLevel" + currentLevelIndex);
+            currentLevelIndex +=  1;
+            Debug.Log("postIncreaseLevel" + currentLevelIndex);
+            CurrentLevel = levels[currentLevelIndex];
+            gameManager.Gold -= levels[currentLevelIndex].cost;
         }
     }
 
     public void OnEnable()
     {
-        CurrentLevel = levels[0];
+           CurrentLevel = levels[0];
+           gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
     }
-
 }
