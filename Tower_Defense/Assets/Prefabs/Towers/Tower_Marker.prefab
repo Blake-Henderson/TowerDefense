@@ -306,8 +306,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7123542141452476884}
   - component: {fileID: 1739401750846654039}
+  - component: {fileID: 653315020963032747}
   m_Layer: 0
-  m_Name: OTower Position
+  m_Name: S Tower Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -378,6 +379,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &653315020963032747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2331591309889463896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8e9eb2265c5f804d89e7795f79e765b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerPrefab: {fileID: 5350721683645675072, guid: ba3fd09d6bae5f44e983492b083a6d10, type: 3}
+  marker: {fileID: 4797114389042873315}
 --- !u!1 &3342495488704508026
 GameObject:
   m_ObjectHideFlags: 0
@@ -456,7 +471,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Oil
+  m_Text: 'Splash
 
     200'
 --- !u!1 &4797114389042873315
@@ -710,7 +725,7 @@ GameObject:
   - component: {fileID: 5790595330780466202}
   - component: {fileID: 946273205940805575}
   m_Layer: 5
-  m_Name: 'Oil Button '
+  m_Name: 'Splash Button '
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -817,7 +832,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5790595330780466202}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2331591309889463896}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7123097928945489849
 GameObject:
   m_ObjectHideFlags: 0
