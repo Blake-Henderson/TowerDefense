@@ -733,15 +733,21 @@ MonoBehaviour:
   - cost: 100
     visual: {fileID: 1311418903502021533}
     bullet: {fileID: 8626795313380882085, guid: 86d9ed0bbf950ed469b4f5a534d3b5dd, type: 3}
+    damage: 20
     fireRate: 1
+    range: 3
   - cost: 150
     visual: {fileID: 3429401496307467932}
     bullet: {fileID: 478665847115289724, guid: 66a26ff2b11e35e4b81b4f36ea259d82, type: 3}
+    damage: 30
     fireRate: 1
+    range: 3
   - cost: 200
     visual: {fileID: 8641853018452566148}
     bullet: {fileID: 1223010055817867045, guid: 062f61f48c0e0d8459be84c27037c175, type: 3}
+    damage: 40
     fireRate: 1
+    range: 3.5
   currentLevelIndex: 0
 --- !u!58 &6189114467384493901
 CircleCollider2D:

@@ -592,7 +592,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6084716795805891509}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0.854, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 7785952120761546759}
@@ -925,6 +925,7 @@ GameObject:
   - component: {fileID: 7785952120761546759}
   - component: {fileID: 9144075114024599788}
   - component: {fileID: 5754798702434326939}
+  - component: {fileID: 2533981069932474752}
   m_Layer: 2
   m_Name: Tower
   m_TagString: Untagged
@@ -963,18 +964,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 100
+  - cost: 200
     visual: {fileID: 579302678680403275}
     bullet: {fileID: 5870529251995932436, guid: 35b8c0fff9021fb478328fd83f271f8d, type: 3}
-    fireRate: 1
+    damage: 10
+    fireRate: 1.5
+    range: 3.5
   - cost: 150
     visual: {fileID: 3868220725517916234}
     bullet: {fileID: 1847016689689328346, guid: 50ba531239edcc041aa6d1a1d1391154, type: 3}
-    fireRate: 1
-  - cost: 200
+    damage: 15
+    fireRate: 1.5
+    range: 3.5
+  - cost: 300
     visual: {fileID: 7914803341091520082}
     bullet: {fileID: 1213454617477364295, guid: f6494e17bd3a0e042a16b3820bb66754, type: 3}
-    fireRate: 1
+    damage: 20
+    fireRate: 1.5
+    range: 3.5
   currentLevelIndex: 0
 --- !u!58 &5754798702434326939
 CircleCollider2D:
@@ -992,6 +999,19 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.5}
   serializedVersion: 2
   m_Radius: 3.5
+--- !u!114 &2533981069932474752
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7785952120761546758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d88863cfdaac77748971799dbc232d30, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemiesInRange: []
 --- !u!1 &7914803341091520082
 GameObject:
   m_ObjectHideFlags: 0

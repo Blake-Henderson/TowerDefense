@@ -1,12 +1,11 @@
 //This script is a modified version of the placemonster code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:11/3/21
-using System.Collections;
+//Date:11/3/21using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Fire_At_Enemies : MonoBehaviour
+public class Splash_Tower_Fire : MonoBehaviour
 {
     /// <summary>
     /// The enimies in range
@@ -24,6 +23,8 @@ public class Fire_At_Enemies : MonoBehaviour
     /// Where the projectile is fired from
     /// </summary>
     private Transform firePoint;
+    private Game_Manager game_Manager;
+    private ParticleSystem pfx;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,42 +32,28 @@ public class Fire_At_Enemies : MonoBehaviour
         lastShotTime = Time.time;
         towerData = gameObject.GetComponentInChildren<Tower_Data>();
         firePoint = gameObject.transform.Find("Fire Point").transform;
+        GameObject gm = GameObject.Find("Game Manager");
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
-
-        GameObject target = null;
-        float minimalEnemyDistance = float.MaxValue;
-        foreach (GameObject enemy in enemiesInRange)
+        if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate && enemiesInRange.Count != 0)
         {
-            float distanceToGoal = enemy.GetComponent<Road_Enemy_AI>().DistanceToGoal();
-            if (distanceToGoal < minimalEnemyDistance)
-            {
-                target = enemy;
-                minimalEnemyDistance = distanceToGoal;
-            }
-        }
-        if (target != null)
-        {
-            if (Time.time - lastShotTime > towerData.CurrentLevel.fireRate)
-            {
-                Fire(target.GetComponent<Collider2D>());
-                lastShotTime = Time.time;
-            }
+            //Debug.Log("Firing");
+            pfx = Instantiate(towerData.CurrentLevel.bullet.GetComponent<ParticleSystem>(),
+            firePoint.transform.position, new Quaternion(-90, 0, 0, 0));
+            Destroy(pfx, 2.0f);
+            Invoke("Fire",.75f);
+            lastShotTime = Time.time;
         }
     }
-
-    private void OnEnemyDestroy(GameObject enemy)
-    {
-        enemiesInRange.Remove(enemy);
-    }
-
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Runner"))
+        //Debug.Log("something entered");
+        if (other.gameObject.tag.Equals("Runner") || other.gameObject.tag.Equals("Breaker"))
         {
+            //Debug.Log("enemy added");
             enemiesInRange.Add(other.gameObject);
             Enemy_Destruction_Delegate del =
                 other.gameObject.GetComponent<Enemy_Destruction_Delegate>();
@@ -76,24 +63,29 @@ public class Fire_At_Enemies : MonoBehaviour
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.gameObject.tag.Equals("Runner"))
+        if (other.gameObject.tag.Equals("Runner") || other.gameObject.tag.Equals("Breaker"))
         {
+            //Debug.Log("enemy removed");
             enemiesInRange.Remove(other.gameObject);
             Enemy_Destruction_Delegate del =
                 other.gameObject.GetComponent<Enemy_Destruction_Delegate>();
             del.enemyDelegate -= OnEnemyDestroy;
         }
     }
-    void Fire(Collider2D target)
+
+    private void OnEnemyDestroy(GameObject enemy)
     {
-        GameObject projPrefab = towerData.CurrentLevel.bullet;
+        enemiesInRange.Remove(enemy);
+    }
 
-
-        GameObject newProj = (GameObject)Instantiate(projPrefab);
-        newProj.transform.position = firePoint.position;
-        Projectile bulletComp = newProj.GetComponent<Projectile>();
-        bulletComp.damage = towerData.CurrentLevel.damage;
-        bulletComp.target = target.gameObject;
-        bulletComp.startPosition = firePoint.position;
+    void Fire()
+    {
+        foreach(GameObject enemy in enemiesInRange)
+        {
+            Transform healthBarTransform = enemy.transform.Find("HealthBar");
+            Health_Bar healthBar =
+                healthBarTransform.gameObject.GetComponent<Health_Bar>();
+            healthBar.currentHealth -= Mathf.Max(towerData.CurrentLevel.damage, 0);
+        }
     }
 }

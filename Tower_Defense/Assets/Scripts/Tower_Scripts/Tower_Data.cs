@@ -1,7 +1,7 @@
 //This script is a modified version of the placemonster code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:10/13/21
+//Date:11/3/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,9 +25,17 @@ public class Tower_Level
     /// </summary>
     public GameObject bullet;
     /// <summary>
+    /// The damage of the tower
+    /// </summary>
+    public int damage;
+    /// <summary>
     /// The fire rate of the tower
     /// </summary>
     public float fireRate;
+    /// <summary>
+    /// The range of the tower
+    /// </summary>
+    public float range = 3.5f;
 }
 
 
@@ -90,7 +98,7 @@ public class Tower_Data : MonoBehaviour
         int maxLevelIndex = levels.Count - 1;
         if (currentLevelIndex < maxLevelIndex)
         {
-            Debug.Log("getNextLevel currentLevel" + currentLevelIndex);
+           // Debug.Log("getNextLevel currentLevel" + currentLevelIndex);
             return levels[currentLevelIndex + 1];
         }
         else
@@ -105,10 +113,11 @@ public class Tower_Data : MonoBehaviour
     {
         if (currentLevelIndex < levels.Count - 1 && gameManager.Gold >= levels[currentLevelIndex+1].cost)
         {
-            Debug.Log("preIncreaseLevel" + currentLevelIndex);
+            //Debug.Log("preIncreaseLevel" + currentLevelIndex);
             currentLevelIndex +=  1;
-            Debug.Log("postIncreaseLevel" + currentLevelIndex);
+           // Debug.Log("postIncreaseLevel" + currentLevelIndex);
             CurrentLevel = levels[currentLevelIndex];
+            gameObject.GetComponent<CircleCollider2D>().radius = currentLevel.range;
             gameManager.Gold -= levels[currentLevelIndex].cost;
         }
     }
@@ -116,6 +125,7 @@ public class Tower_Data : MonoBehaviour
     public void OnEnable()
     {
            CurrentLevel = levels[0];
+           gameObject.GetComponent<CircleCollider2D>().radius = levels[0].range;
            gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
     }
 }

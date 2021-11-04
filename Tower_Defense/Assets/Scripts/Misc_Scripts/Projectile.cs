@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     public int damage;
     public GameObject target;
     public Vector3 startPosition;
-    public Vector3 targetPosition;
+    //public Transform targetPosition;
 
     private float distance;
     private float startTime;
@@ -18,7 +18,7 @@ public class Projectile : MonoBehaviour
     private void Start()
     {
         startTime = Time.time;
-        distance = Vector2.Distance(startPosition, targetPosition);
+        distance = Vector2.Distance(startPosition, target.transform.position);
         GameObject gm = GameObject.Find("Game Manager");
         game_Manager = gm.GetComponent<Game_Manager>();
         Vector3 direction = startPosition - target.transform.position;
@@ -29,11 +29,11 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         float timeInterval = Time.time - startTime;
-        gameObject.transform.position = Vector3.Lerp(startPosition, targetPosition, timeInterval * speed / distance);
+        gameObject.transform.position = Vector3.Lerp(startPosition, target.transform.position, timeInterval * speed / distance);
 
         
 
-        if (gameObject.transform.position.Equals(targetPosition))
+        if (gameObject.transform.position.Equals(target.transform.position))
         {
             if (target != null)
             {
@@ -41,12 +41,12 @@ public class Projectile : MonoBehaviour
                 Health_Bar healthBar =
                     healthBarTransform.gameObject.GetComponent<Health_Bar>();
                 healthBar.currentHealth -= Mathf.Max(damage, 0);
-                if (healthBar.currentHealth <= 0)
-                {
-                    Destroy(target);
+                //if (healthBar.currentHealth <= 0)
+                //{
+                //    Destroy(target);
 
-                    game_Manager.Gold += target.GetComponent<Enemy_Data>().reward;
-                }
+                //    game_Manager.Gold += target.GetComponent<Enemy_Data>().reward;
+                //}
             }
             Destroy(gameObject);
         }
