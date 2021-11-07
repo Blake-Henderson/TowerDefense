@@ -23,7 +23,6 @@ public class Splash_Tower_Fire : MonoBehaviour
     /// Where the projectile is fired from
     /// </summary>
     private Transform firePoint;
-    private Game_Manager game_Manager;
     private ParticleSystem pfx;
     // Start is called before the first frame update
     void Start()
