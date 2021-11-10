@@ -75,11 +75,15 @@ public class Game_Manager : MonoBehaviour
         set
         {
             lives = value;
-            livesText.text = "LIVES: " + lives;
             if (lives <= 0 && !gameOver)
             {
+                livesText.text = "LIVES: 0";
                 gameOver = true;
                 losePanel.SetActive(true);
+            }
+            else
+            {
+                livesText.text = "LIVES: " + lives;
             }
         }
     }
