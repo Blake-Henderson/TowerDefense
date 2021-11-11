@@ -1,5 +1,7 @@
+//This script is a modified version of the code found at
+//https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:10/13/21
+//Date:11/10/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

@@ -1,7 +1,8 @@
 //This script is a modified version of the placemonster code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:11/3/21using System.Collections;
+//Date:11/3/21
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
