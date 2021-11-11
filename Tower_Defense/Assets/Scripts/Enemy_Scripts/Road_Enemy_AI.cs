@@ -64,7 +64,10 @@ public class Road_Enemy_AI : MonoBehaviour
 
                 Game_Manager gameManager =
                     GameObject.Find("Game Manager").GetComponent<Game_Manager>();
-                gameManager.Lives -= 1;
+                if (gameManager.Lives > 0)
+                {
+                    gameManager.Lives -= 1;
+                }
             }
         }
 

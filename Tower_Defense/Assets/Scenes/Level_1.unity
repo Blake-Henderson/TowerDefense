@@ -23835,20 +23835,28 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 193743121, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
+      propertyPath: losePanel
+      value: 
+      objectReference: {fileID: 72156333}
+    - target: {fileID: 193743121, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
       propertyPath: healthText
       value: 
       objectReference: {fileID: 139694390}
+    - target: {fileID: 193743121, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
+      propertyPath: projectile
+      value: 
+      objectReference: {fileID: 2697738963503722907, guid: 712d56bf16a695b409f30b8cc50cbd03, type: 3}
     - target: {fileID: 2297212861234316966, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
       propertyPath: m_RootOrder
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2297212861234316966, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.4031668
+      value: 12.61
       objectReference: {fileID: 0}
     - target: {fileID: 2297212861234316966, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -8.397879
+      value: -6.08
       objectReference: {fileID: 0}
     - target: {fileID: 2297212861234316966, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
       propertyPath: m_LocalPosition.z
@@ -23884,6 +23892,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5994421315641277126, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 5994421315641277126, guid: 789fe48ba84a261429c6ac206a5fd9dc, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []

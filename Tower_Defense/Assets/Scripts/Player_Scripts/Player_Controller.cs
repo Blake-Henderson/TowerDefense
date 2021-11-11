@@ -24,24 +24,45 @@ public class Player_Controller : MonoBehaviour
     /// </summary>
     public float fireRate = 1.0f;
     /// <summary>
-    /// How long the player is invincible after being hit
+    /// How long the player is invincible after being hit by runners
     /// </summary>
     public float iTime = .5f;
+    /// <summary>
+    /// The panel that holds the lose text
+    /// </summary>
+    public GameObject losePanel;
     /// <summary>
     /// The text that displays the player's health
     /// </summary>
     public TMP_Text healthText;
     /// <summary>
+    /// Where the projectiles are fired from
+    /// </summary>
+    private Transform firePoint;
+    /// <summary>
     /// The player animator
     /// </summary>
     private Animator animator;
+    /// <summary>
+    /// The rigid body of the player
+    /// </summary>
     private Rigidbody2D rb2d;
-    private float shotTimer = 0.0f;
-    private float damageTimer = 0.0f;
+    /// <summary>
+    /// The timer for keeping track between shots
+    /// </summary>
+    private float shotTimer = 20.0f;
+    /// <summary>
+    /// The timer for how long the player is immune to runner damage
+    /// </summary>
+    private float damageTimer = 20.0f;
+    /// <summary>
+    /// The movement the player is doing
+    /// </summary>
     private Vector2 movement;
     // Start is called before the first frame update
     void Start()
     {
+        firePoint = transform.Find("Fire Point");
         rb2d = gameObject.GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         healthText.text = ("HEALTH: " + health);
@@ -68,6 +89,64 @@ public class Player_Controller : MonoBehaviour
             animator.SetBool("Facing Left", false);
         }
 
+        if (movement.y > 0)
+        {
+            animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
+            animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
+            tryShooting();
+        }
+        if (movement.y < 0)
+        {
+            animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
+            animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
+            tryShooting();
+        }
+        if (movement.x > 0)
+        {
+            animator.SetBool("Moving Right", true);
+            animator.SetBool("Moving Left", false);
+            tryShooting();
+        }
+        if (movement.x < 0)
+        {
+            animator.SetBool("Moving Right", false);
+            animator.SetBool("Moving Left", true);
+            tryShooting();
+        }
+        if (movement.x == 0 && movement.y == 0)
+        {
+            animator.SetBool("Moving Right", false);
+            animator.SetBool("Moving Left", false);
+            tryShooting();
+        }
+    }
+    // Update is called once per frame
+    void FixedUpdate()
+    {
+        healthText.text = ("HEALTH: " + health);
+        if (health <= 0)
+        {
+            losePanel.SetActive(true);
+        }
+        rb2d.MovePosition(rb2d.position + (movement * speed * Time.deltaTime));
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Runner" && damageTimer >= iTime)
+        {
+            if (health > 0)
+            {
+                health -= 1;
+                damageTimer = 0.0f;
+            }           
+        }
+    }
+    /// <summary>
+    /// Tries to fire a projectile
+    /// </summary>
+    void tryShooting()
+    {
         if (Input.GetMouseButtonDown(0) && shotTimer >= fireRate)
         {
             animator.SetTrigger("Attack");
@@ -75,49 +154,18 @@ public class Player_Controller : MonoBehaviour
             animator.SetBool("Moving Left", false);
             shotTimer = 0.0f;
         }
-        else
-        {
-            if (movement.y > 0)
-            {
-                animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
-                animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
-            }
-            if (movement.y < 0)
-            {
-                animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
-                animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
-            }
-            if (movement.x > 0)
-            {
-                animator.SetBool("Moving Right", true);
-                animator.SetBool("Moving Left", false);
-            }
-            if (movement.x < 0)
-            {
-                animator.SetBool("Moving Right", false);
-                animator.SetBool("Moving Left", true);
-            }
-            if (movement.y > 0)
-            {
-                animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
-                animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
-            }
-            if (movement.y < 0)
-            {
-                animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
-                animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
-            }
-            if (movement.x == 0 && movement.y == 0)
-            {
-                animator.SetBool("Moving Right", false);
-                animator.SetBool("Moving Left", false);
-            }
-        }
     }
-    // Update is called once per frame
-    void FixedUpdate()
+    /// <summary>
+    /// Actually fires a projectile very similar to the firing in the player controller from my previous project
+    /// https://github.com/Blake-Henderson/Midterm_2D_Game
+    /// </summary>
+    void fire()
     {
+        Vector2 mouseScreen = Input.mousePosition;
+        Vector2 mousePos = Camera.main.ScreenToWorldPoint(mouseScreen);
+        float angle = Mathf.Atan2(mousePos.y - firePoint.position.y,
+            mousePos.x - firePoint.position.x) * Mathf.Rad2Deg;
+        Instantiate(projectile, firePoint.position, Quaternion.Euler(0, 0, angle));
         animator.ResetTrigger("Attack");
-        rb2d.MovePosition(rb2d.position + (movement * speed * Time.deltaTime));
     }
 }

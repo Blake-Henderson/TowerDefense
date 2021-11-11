@@ -97,8 +97,4 @@ public class Game_Manager : MonoBehaviour
         Wave = 0;
         Lives = 10;
     }
-    private void Update()
-    {
-        
-    }
 }

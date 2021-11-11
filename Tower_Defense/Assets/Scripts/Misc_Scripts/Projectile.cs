@@ -9,9 +9,14 @@ using UnityEngine;
 public class Projectile : MonoBehaviour
 {
     public float speed = 10.0f;
+    [HideInInspector]
     public int damage;
+    [HideInInspector]
     public GameObject target;
+    [HideInInspector]
     public Vector3 startPosition;
+
+    public float despawnTime = 1f;
     //public Transform targetPosition;
 
     private float distance;
@@ -21,6 +26,7 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
+        Destroy(gameObject, despawnTime);
         startTime = Time.time;
         distance = Vector2.Distance(startPosition, target.transform.position);
         GameObject gm = GameObject.Find("Game Manager");
@@ -33,25 +39,31 @@ public class Projectile : MonoBehaviour
     private void Update()
     {
         float timeInterval = Time.time - startTime;
-        gameObject.transform.position = Vector3.Lerp(startPosition, target.transform.position, timeInterval * speed / distance);
 
-        
-
-        if (gameObject.transform.position.Equals(target.transform.position))
+        if (target != null)
         {
-            if (target != null)
-            {
-                Transform healthBarTransform = target.transform.Find("HealthBar");
-                Health_Bar healthBar =
-                    healthBarTransform.gameObject.GetComponent<Health_Bar>();
-                healthBar.currentHealth -= Mathf.Max(damage, 0);
-                //if (healthBar.currentHealth <= 0)
-                //{
-                //    Destroy(target);
+            gameObject.transform.position = Vector3.Lerp(startPosition, target.transform.position, timeInterval * speed / distance);
 
-                //    game_Manager.Gold += target.GetComponent<Enemy_Data>().reward;
-                //}
+            if (gameObject.transform.position.Equals(target.transform.position))
+            {
+                if (target != null)
+                {
+                    Transform healthBarTransform = target.transform.Find("HealthBar");
+                    Health_Bar healthBar =
+                        healthBarTransform.gameObject.GetComponent<Health_Bar>();
+                    healthBar.currentHealth -= damage;
+                    //if (healthBar.currentHealth <= 0)
+                    //{
+                    //    Destroy(target);
+
+                    //    game_Manager.Gold += target.GetComponent<Enemy_Data>().reward;
+                    //}
+                }
+                Destroy(gameObject);
             }
+        }
+        else
+        {
             Destroy(gameObject);
         }
     }

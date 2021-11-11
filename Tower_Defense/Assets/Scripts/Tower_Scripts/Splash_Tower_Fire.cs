@@ -85,7 +85,7 @@ public class Splash_Tower_Fire : MonoBehaviour
             Transform healthBarTransform = enemy.transform.Find("HealthBar");
             Health_Bar healthBar =
                 healthBarTransform.gameObject.GetComponent<Health_Bar>();
-            healthBar.currentHealth -= Mathf.Max(towerData.CurrentLevel.damage, 0);
+            healthBar.currentHealth -= towerData.CurrentLevel.damage;
         }
     }
 }

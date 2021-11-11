@@ -433,6 +433,7 @@ GameObject:
   - component: {fileID: 3537465166194381583}
   - component: {fileID: 9074489467401667783}
   - component: {fileID: 6678555016788017990}
+  - component: {fileID: 4863849601244345176}
   m_Layer: 0
   m_Name: Splash Tower
   m_TagString: Untagged
@@ -469,7 +470,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0.4}
@@ -502,6 +503,32 @@ MonoBehaviour:
   button: {fileID: 6827938025969107680}
   text: {fileID: 1328321008522619008}
   tower: {fileID: 9144075114024599788}
+--- !u!61 &4863849601244345176
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5350721683645675072}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.4}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.45, y: 1.8}
+  m_EdgeRadius: 0
 --- !u!1 &5642862309243831748
 GameObject:
   m_ObjectHideFlags: 0

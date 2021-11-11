@@ -41,12 +41,12 @@ public class Fire_At_Enemies : MonoBehaviour
         float minimalEnemyDistance = float.MaxValue;
         foreach (GameObject enemy in enemiesInRange)
         {
-            float distanceToGoal = enemy.GetComponent<Road_Enemy_AI>().DistanceToGoal();
-            if (distanceToGoal < minimalEnemyDistance)
-            {
-                target = enemy;
-                minimalEnemyDistance = distanceToGoal;
-            }
+                float distanceToGoal = enemy.GetComponent<Road_Enemy_AI>().DistanceToGoal();
+                if (distanceToGoal < minimalEnemyDistance)
+                {
+                    target = enemy;
+                    minimalEnemyDistance = distanceToGoal;
+                }            
         }
         if (target != null)
         {
