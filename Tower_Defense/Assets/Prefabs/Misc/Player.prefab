@@ -60,7 +60,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5994421315641277126}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -8.99, y: -10.31, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 2197651545356652809}
@@ -223,9 +223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 10
-  projectile: {fileID: 0}
+  projectile: {fileID: 2697738963503722907, guid: 712d56bf16a695b409f30b8cc50cbd03, type: 3}
   speed: 2
-  fireRate: 1
+  fireRate: 0.75
   iTime: 0.5
   losePanel: {fileID: 0}
   healthText: {fileID: 0}

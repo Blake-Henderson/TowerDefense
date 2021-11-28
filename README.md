@@ -1,6 +1,11 @@
 # TowerDefense
 A tower defense game with a twist for my game programming class
 
+Art assets:
+All art assets other than the health bars were created by me
+the health bars are from :https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1
+
+
 Programming Sources:
 Base tower defense files from
 https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1

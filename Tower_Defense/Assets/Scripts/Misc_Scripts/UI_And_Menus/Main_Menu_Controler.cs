@@ -10,6 +10,10 @@ public class Main_Menu_Controler : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Level_1");
     }
+    public void tutorialButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
+    }
     public void quitButton()
     {
         Application.Quit();
