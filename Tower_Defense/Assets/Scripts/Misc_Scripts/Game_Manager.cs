@@ -80,6 +80,7 @@ public class Game_Manager : MonoBehaviour
                 livesText.text = "LIVES: 0";
                 gameOver = true;
                 losePanel.SetActive(true);
+                Time.timeScale = 0.0f;
             }
             else
             {
@@ -96,5 +97,6 @@ public class Game_Manager : MonoBehaviour
         Gold = startingGold;
         Wave = 0;
         Lives = 10;
+        Time.timeScale = 1.0f;
     }
 }

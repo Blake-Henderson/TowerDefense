@@ -1,6 +1,7 @@
 //This script is a modified version of the code found at
-//https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018//Author:Blake Henderson
-//Date:11/10/21
+//https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
+//Author:Blake Henderson
+//Date:12/5/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -66,8 +67,9 @@ public class Wave_Manager : MonoBehaviour
                         {
                             lastSpawnTime = Time.time;
 
-                            GameObject newEnemy = (GameObject)Instantiate(waves[currentWave].enemies[currentEnemy].enemy,
-                                waves[currentWave].enemies[currentEnemy].path.waypoints[0].transform);
+                            GameObject newEnemy = (GameObject)SimplePool.Spawn(waves[currentWave].enemies[currentEnemy].enemy,
+                                waves[currentWave].enemies[currentEnemy].path.waypoints[0].transform.position, Quaternion.identity);
+                            newEnemy.GetComponent<Road_Enemy_AI>().init();
                             newEnemy.GetComponent<Road_Enemy_AI>().waypoints =
                                 waves[currentWave].enemies[currentEnemy].path.waypoints;
                         }
@@ -80,21 +82,27 @@ public class Wave_Manager : MonoBehaviour
                     }
                 }
             }
-            if (currentEnemy == waves[currentWave].enemies.Count &&
+            if (currentWave >= waves.Length - 1)
+            {
+                winPanel.SetActive(true);
+                Time.timeScale = 0.0f;
+            }
+            else if (currentEnemy == waves[currentWave].enemies.Count &&
                 GameObject.FindGameObjectWithTag("Runner") == null &&
                 GameObject.FindGameObjectWithTag("Breaker") == null)
             {
-                gameManager.Gold += waves[currentWave].reward;
-                if (currentWave < waves.Length)
+                if (currentWave < waves.Length - 1)
                 {
                     gameManager.Wave++;
+                    gameManager.Gold += waves[currentWave].reward;
+
+                    currentEnemy = 0;
+                    lastSpawnTime = Time.time;
                 }
-                else
-                {
-                    winPanel.SetActive(true);
-                }
-                currentEnemy = 0;
-                lastSpawnTime = Time.time;
+            }
+            else
+            {
+                //wave is still going continue as normal
             }
         }
     }

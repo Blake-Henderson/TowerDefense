@@ -7,6 +7,16 @@ the health bars are from :https://www.raywenderlich.com/269-how-to-create-a-towe
 
 
 Programming Sources:
+
+Simple Pool by Martin "quill18" Glaude is used for object pooling
+
+A* unity path finding project by Aron Granberg
+used for the pathfinding for breaker enemies
+https://arongranberg.com/astar/
+
+The use of A* was assisted by this tutorial
+https://www.youtube.com/watch?v=jvtFUfJ6CP8
+
 Base tower defense files from
 https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1
 and

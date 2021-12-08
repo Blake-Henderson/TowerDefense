@@ -1,7 +1,7 @@
 //This script is a modified version of the code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:11/10/21
+//Date:12/5/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -26,7 +26,17 @@ public class Projectile : MonoBehaviour
 
     private void Start()
     {
-        Destroy(gameObject, despawnTime);
+        startTime = Time.time;
+        distance = Vector2.Distance(startPosition, target.transform.position);
+        GameObject gm = GameObject.Find("Game Manager");
+        game_Manager = gm.GetComponent<Game_Manager>();
+        Vector3 direction = startPosition - target.transform.position;
+        gameObject.transform.rotation = Quaternion.AngleAxis(
+            Mathf.Atan2(direction.y, direction.x) * 180 / Mathf.PI,
+            new Vector3(0, 0, 1));
+    }
+    public void init()
+    {
         startTime = Time.time;
         distance = Vector2.Distance(startPosition, target.transform.position);
         GameObject gm = GameObject.Find("Game Manager");
@@ -52,19 +62,17 @@ public class Projectile : MonoBehaviour
                     Health_Bar healthBar =
                         healthBarTransform.gameObject.GetComponent<Health_Bar>();
                     healthBar.currentHealth -= damage;
-                    //if (healthBar.currentHealth <= 0)
-                    //{
-                    //    Destroy(target);
-
-                    //    game_Manager.Gold += target.GetComponent<Enemy_Data>().reward;
-                    //}
                 }
-                Destroy(gameObject);
+                SimplePool.Despawn(gameObject);
             }
         }
         else
         {
-            Destroy(gameObject);
+            SimplePool.Despawn(gameObject);
         }
+    }
+    void despawn()
+    {
+        SimplePool.Despawn(gameObject);
     }
 }

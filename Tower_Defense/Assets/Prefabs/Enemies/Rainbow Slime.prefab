@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 2492160996153979926}
   - component: {fileID: 2334797711929975765}
-  - component: {fileID: 8759191494583486554}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Untagged
@@ -83,20 +82,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &8759191494583486554
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837453584994993578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75bd57f90546f9746a16ae8aa92b6d11, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sprite: {fileID: 2334797711929975765}
-  minimumColor: 0.01
 --- !u!1 &2117184512330957778
 GameObject:
   m_ObjectHideFlags: 0
@@ -111,6 +96,7 @@ GameObject:
   - component: {fileID: 7808324383037064234}
   - component: {fileID: -2754044338514320596}
   - component: {fileID: -6626378244195345681}
+  - component: {fileID: 521377281855939541}
   m_Layer: 0
   m_Name: Rainbow Slime
   m_TagString: Runner
@@ -148,6 +134,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
+  health: {fileID: 9188932188427576177}
+  lastWaypointSwitchTime: 0
 --- !u!50 &8307679362855308289
 Rigidbody2D:
   serializedVersion: 4
@@ -212,6 +200,20 @@ MonoBehaviour:
   reward: 10
   speed: 2.5
   health: 100
+--- !u!114 &521377281855939541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117184512330957778}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75bd57f90546f9746a16ae8aa92b6d11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 2334797711929975765}
+  minimumColor: 0.1
 --- !u!1 &2798993332535966316
 GameObject:
   m_ObjectHideFlags: 0
@@ -307,6 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0824245aac90aef4d84569b10d7268f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   currentHealth: 100
 --- !u!1 &5304439855281884164
 GameObject:

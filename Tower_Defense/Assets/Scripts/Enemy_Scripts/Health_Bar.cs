@@ -31,7 +31,7 @@ public class Health_Bar : MonoBehaviour
         {
             if (currentHealth <= 0)
             {
-                Destroy(gameObject.transform.parent.gameObject);
+                SimplePool.Despawn(gameObject.transform.parent.gameObject);
 
                 game_Manager.Gold += gameObject.transform.parent.gameObject.GetComponent<Enemy_Data>().reward;
             }

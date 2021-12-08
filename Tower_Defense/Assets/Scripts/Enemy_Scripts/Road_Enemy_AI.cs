@@ -13,6 +13,8 @@ public class Road_Enemy_AI : MonoBehaviour
     /// </summary>
     [HideInInspector]
     public GameObject[] waypoints;
+
+    public Health_Bar health;
     /// <summary>
     /// The waypoint the enemy is walking away from
     /// </summary>
@@ -20,7 +22,7 @@ public class Road_Enemy_AI : MonoBehaviour
     /// <summary>
     /// The time in which the enemy passes over the current waypoint
     /// </summary>
-    private float lastWaypointSwitchTime;
+    public float lastWaypointSwitchTime;
     /// <summary>
     /// The speed of the enemy
     /// </summary>
@@ -29,6 +31,19 @@ public class Road_Enemy_AI : MonoBehaviour
     {
         lastWaypointSwitchTime = Time.time;
         speed = gameObject.GetComponent<Enemy_Data>().speed;
+    }
+    public void init()
+    {
+        lastWaypointSwitchTime = Time.time;
+        speed = gameObject.GetComponent<Enemy_Data>().speed;
+        health.currentHealth = health.maxHealth;
+        currentWaypoint = 0;
+        SpriteRenderer sprite = gameObject.transform.Find("Sprite").gameObject.GetComponent<SpriteRenderer>();
+        sprite.flipX = false;
+        if(gameObject.TryGetComponent(out Rainbow_Slime_Coloring slime))
+        {
+            slime.changeColor();
+        }
     }
     private void Update()
     {

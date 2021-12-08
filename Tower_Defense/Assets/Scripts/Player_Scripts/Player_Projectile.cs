@@ -27,9 +27,12 @@ public class Player_Projectile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //gameManager = GameObject.FindWithTag("GameManager").GetComponent<GameManager>();
         rb2d = GetComponent<Rigidbody2D>();
-        BulletDepawn();
+        Invoke("BulletDespawn", despawnTime);
+    }
+    void Init()
+    {
+        Invoke("BulletDespawn", despawnTime);
     }
 
     // Update is called once per frame
@@ -42,9 +45,9 @@ public class Player_Projectile : MonoBehaviour
     /// <summary>
     /// Despawns the bullet after a given number of time.
     /// </summary>
-    private void BulletDepawn()
+    private void BulletDespawn()
     {
-        Destroy(gameObject, despawnTime);
+        SimplePool.Despawn(gameObject);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
@@ -54,11 +57,7 @@ public class Player_Projectile : MonoBehaviour
             Health_Bar healthBar =
                 healthBarTransform.gameObject.GetComponent<Health_Bar>();
             healthBar.currentHealth -= damage;
-            Destroy(gameObject);
+            SimplePool.Despawn(gameObject);
         }
-        //if (collision.tag != "Player" && collision.tag != "Loot")
-        //{
-        //    Destroy(gameObject);
-        //}
     }
 }

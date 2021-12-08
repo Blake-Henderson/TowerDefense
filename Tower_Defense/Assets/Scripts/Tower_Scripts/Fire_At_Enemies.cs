@@ -1,7 +1,7 @@
 //This script is a modified version of the code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:11/3/21
+//Date:12/5/21
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -89,11 +89,11 @@ public class Fire_At_Enemies : MonoBehaviour
         GameObject projPrefab = towerData.CurrentLevel.bullet;
 
 
-        GameObject newProj = (GameObject)Instantiate(projPrefab);
-        newProj.transform.position = firePoint.position;
+        GameObject newProj = (GameObject)SimplePool.Spawn(projPrefab,firePoint.position,Quaternion.identity);
         Projectile bulletComp = newProj.GetComponent<Projectile>();
         bulletComp.damage = towerData.CurrentLevel.damage;
         bulletComp.target = target.gameObject;
         bulletComp.startPosition = firePoint.position;
+        bulletComp.init();        
     }
 }

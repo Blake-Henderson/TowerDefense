@@ -127,6 +127,7 @@ public class Player_Controller : MonoBehaviour
         if (health <= 0)
         {
             losePanel.SetActive(true);
+            Time.timeScale = 0.0f;
         }
         rb2d.MovePosition(rb2d.position + (movement * speed * Time.deltaTime));
     }
@@ -165,7 +166,7 @@ public class Player_Controller : MonoBehaviour
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(mouseScreen);
         float angle = Mathf.Atan2(mousePos.y - firePoint.position.y,
             mousePos.x - firePoint.position.x) * Mathf.Rad2Deg;
-        Instantiate(projectile, firePoint.position, Quaternion.Euler(0, 0, angle));
-        animator.ResetTrigger("Attack");
+        SimplePool.Spawn(projectile, firePoint.position, Quaternion.Euler(0, 0, angle));
+        //animator.ResetTrigger("Attack");
     }
 }

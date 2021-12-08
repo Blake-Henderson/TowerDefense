@@ -9,7 +9,7 @@ using UnityEngine;
 /// Used for storing data on the current level of the tower
 /// </summary>
 [System.Serializable]
-public class Tower_Level 
+public class Tower_Level
 {
     //[System.Serializable] allows the class to be edited in the inspector
     /// <summary>
@@ -36,6 +36,10 @@ public class Tower_Level
     /// The range of the tower
     /// </summary>
     public float range = 3.5f;
+    /// <summary>
+    /// The max health of the tower
+    /// </summary>
+    public int maxHealth = 100;
 }
 
 
@@ -49,6 +53,10 @@ public class Tower_Data : MonoBehaviour
     /// The index of the current level
     /// </summary>
     public int currentLevelIndex = 0;
+    /// <summary>
+    /// The health of the tower
+    /// </summary>
+    public Health_Bar health;
     /// <summary>
     /// The current level of the tower
     /// </summary>
@@ -98,7 +106,7 @@ public class Tower_Data : MonoBehaviour
         int maxLevelIndex = levels.Count - 1;
         if (currentLevelIndex < maxLevelIndex)
         {
-           // Debug.Log("getNextLevel currentLevel" + currentLevelIndex);
+            // Debug.Log("getNextLevel currentLevel" + currentLevelIndex);
             return levels[currentLevelIndex + 1];
         }
         else
@@ -111,21 +119,34 @@ public class Tower_Data : MonoBehaviour
     /// </summary>
     public void IncreaseLevel()
     {
-        if (currentLevelIndex < levels.Count - 1 && gameManager.Gold >= levels[currentLevelIndex+1].cost)
+        if (currentLevelIndex < levels.Count - 1 && gameManager.Gold >= levels[currentLevelIndex + 1].cost)
         {
             //Debug.Log("preIncreaseLevel" + currentLevelIndex);
-            currentLevelIndex +=  1;
-           // Debug.Log("postIncreaseLevel" + currentLevelIndex);
+            currentLevelIndex += 1;
+            // Debug.Log("postIncreaseLevel" + currentLevelIndex);
             CurrentLevel = levels[currentLevelIndex];
             gameObject.GetComponent<CircleCollider2D>().radius = currentLevel.range;
             gameManager.Gold -= levels[currentLevelIndex].cost;
+            health.maxHealth = levels[currentLevelIndex].maxHealth;
+            health.currentHealth = health.maxHealth;
         }
     }
 
     public void OnEnable()
     {
-           CurrentLevel = levels[0];
-           gameObject.GetComponent<CircleCollider2D>().radius = levels[0].range;
-           gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
+        CurrentLevel = levels[0];
+        gameObject.GetComponent<CircleCollider2D>().radius = levels[0].range;
+        gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
+        health.maxHealth = levels[0].maxHealth;
+        health.currentHealth = health.maxHealth;
+    }
+
+    public void takeDamage(int damage)
+    {
+        health.currentHealth -= damage;
+        if(health.currentHealth <= 0)
+        {
+            Destroy(gameObject.transform.parent);
+        }
     }
 }

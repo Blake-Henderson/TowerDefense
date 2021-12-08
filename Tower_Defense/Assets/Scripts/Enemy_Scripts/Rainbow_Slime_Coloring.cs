@@ -14,6 +14,10 @@ public class Rainbow_Slime_Coloring : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        changeColor();
+    }
+    public void changeColor()
+    {
         //generates a new random color for the sprite
         sprite.color = new Color(Random.Range(minimumColor, 1f), Random.Range(minimumColor, 1f), Random.Range(minimumColor, 1f), 1);
     }

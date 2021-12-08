@@ -18,16 +18,23 @@ public class Tower_UI : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        if (tower.getNextLevel() != null)
+        if (Pause_Menu.isPaused)
         {
-            canvas.gameObject.SetActive(true);
-            button.transform.position = Camera.main.WorldToScreenPoint(position.transform.position);
-            text.text = "Upgrade \n" + tower.getNextLevel().cost;
-            
+            canvas.gameObject.SetActive(false);
         }
         else
         {
-            canvas.gameObject.SetActive(false);
+            if (tower.getNextLevel() != null)
+            {
+                canvas.gameObject.SetActive(true);
+                button.transform.position = Camera.main.WorldToScreenPoint(position.transform.position);
+                text.text = "Upgrade \n" + tower.getNextLevel().cost;
+
+            }
+            else
+            {
+                canvas.gameObject.SetActive(false);
+            }
         }
     }
     private void OnMouseExit()

@@ -177,6 +177,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0824245aac90aef4d84569b10d7268f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  maxHealth: 100
   currentHealth: 250
 --- !u!1 &8095348619692737499
 GameObject:
@@ -229,6 +230,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waypoints: []
+  health: {fileID: 2559014247554834129}
+  lastWaypointSwitchTime: 0
 --- !u!50 &1625760919780137032
 Rigidbody2D:
   serializedVersion: 4

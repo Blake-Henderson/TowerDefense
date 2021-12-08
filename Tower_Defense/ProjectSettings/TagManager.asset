@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Runner
   - Breaker
+  - Tower
   layers:
   - Default
   - TransparentFX

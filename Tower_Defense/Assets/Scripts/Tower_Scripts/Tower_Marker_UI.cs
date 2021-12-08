@@ -17,10 +17,17 @@ public class Tower_Marker_UI : MonoBehaviour
     }
     private void OnMouseOver()
     {
-        canvas.gameObject.SetActive(true);
-        for (int i = 0; i < positions.Count; i++)
+        if (Pause_Menu.isPaused)
         {
-            buttons[i].transform.position = Camera.main.WorldToScreenPoint(positions[i].transform.position);
+            canvas.gameObject.SetActive(false);
+        }
+        else
+        {
+            canvas.gameObject.SetActive(true);
+            for (int i = 0; i < positions.Count; i++)
+            {
+                buttons[i].transform.position = Camera.main.WorldToScreenPoint(positions[i].transform.position);
+            }
         }
             
     }

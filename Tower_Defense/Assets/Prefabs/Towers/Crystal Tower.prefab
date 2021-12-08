@@ -354,7 +354,7 @@ GameObject:
   - component: {fileID: 1886748643687385443}
   m_Layer: 0
   m_Name: Crystal Tower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -447,72 +447,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1.82}
   m_EdgeRadius: 0
---- !u!1 &4986860537337347425
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 7733870047582309816}
-  - component: {fileID: 4281995499945042056}
-  - component: {fileID: 7986416884781078897}
-  m_Layer: 0
-  m_Name: EventSystem
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &7733870047582309816
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4986860537337347425}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -389.5, y: -250.5, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 8801227187839043220}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &4281995499945042056
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4986860537337347425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
-  m_sendNavigationEvents: 1
-  m_DragThreshold: 10
---- !u!114 &7986416884781078897
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4986860537337347425}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
 --- !u!1 &5264333517442004319
 GameObject:
   m_ObjectHideFlags: 0
@@ -815,19 +749,23 @@ MonoBehaviour:
     damage: 50
     fireRate: 3
     range: 7
+    maxHealth: 100
   - cost: 200
     visual: {fileID: 4527582322832187631}
     bullet: {fileID: 8514105437889038367, guid: 418a3a3c8eb9d6c4bb02e3a62c627a3e, type: 3}
     damage: 60
     fireRate: 2.5
     range: 7
+    maxHealth: 100
   - cost: 300
     visual: {fileID: 7398461836591957751}
     bullet: {fileID: 1920776143455685477, guid: 15a8988f070f3dc44b7bf5528e39d5be, type: 3}
     damage: 75
     fireRate: 2.5
     range: 8
+    maxHealth: 125
   currentLevelIndex: 0
+  health: {fileID: 4797077017199164050}
 --- !u!58 &4946848562122498366
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -888,7 +826,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 7262855889325077487}
-  - {fileID: 7733870047582309816}
   m_Father: {fileID: 4209743809201384362}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

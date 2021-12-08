@@ -35,6 +35,10 @@ public class Build_Tower : MonoBehaviour
                Quaternion.identity);
             gameManager.Gold -= tower.GetComponentInChildren<Tower_Data>().CurrentLevel.cost;
             marker.SetActive(false);
+            foreach(GameObject breaker in GameObject.FindGameObjectsWithTag("Breaker"))
+            {
+
+            }
         }
     }
 }
