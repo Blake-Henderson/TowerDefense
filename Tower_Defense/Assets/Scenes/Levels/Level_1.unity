@@ -22573,6 +22573,63 @@ Transform:
   m_Father: {fileID: 1334489342}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &938474442
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735580, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3416946083414735582, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
+      propertyPath: m_Name
+      value: Music
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ed4121f07fc03f24b8819d46977e4d29, type: 3}
 --- !u!1 &947421568
 GameObject:
   m_ObjectHideFlags: 0
@@ -22945,7 +23002,7 @@ MonoBehaviour:
     - spawnTime: 1
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
       path: {fileID: 1334489343}
-    reward: 50
+    reward: 25
   - enemies:
     - spawnTime: 5
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
@@ -23022,101 +23079,101 @@ MonoBehaviour:
     - spawnTime: 0.5
       enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
       path: {fileID: 1334489343}
+    reward: 25
+  - enemies:
+    - spawnTime: 5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
     reward: 50
   - enemies:
     - spawnTime: 5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    reward: 100
-  - enemies:
-    - spawnTime: 5
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
       path: {fileID: 1334489343}
     - spawnTime: 1
@@ -23145,113 +23202,6 @@ MonoBehaviour:
       path: {fileID: 1334489343}
     - spawnTime: 1
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 1
-      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
-      path: {fileID: 1334489343}
-    reward: 150
-  - enemies:
-    - spawnTime: 5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
-      path: {fileID: 1334489343}
-    - spawnTime: 0.5
-      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
       path: {fileID: 1334489343}
     - spawnTime: 1
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
@@ -23314,6 +23264,113 @@ MonoBehaviour:
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
       path: {fileID: 1334489343}
     reward: 100
+  - enemies:
+    - spawnTime: 5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 0.5
+      enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    - spawnTime: 1
+      enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
+      path: {fileID: 1334489343}
+    reward: 0
   winPanel: {fileID: 1105182097}
 --- !u!4 &1332918405
 Transform:

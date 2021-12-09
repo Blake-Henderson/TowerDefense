@@ -82,7 +82,7 @@ public class Wave_Manager : MonoBehaviour
                     }
                 }
             }
-            if (currentWave >= waves.Length - 1)
+            if (currentWave == waves.Length)
             {
                 winPanel.SetActive(true);
                 Time.timeScale = 0.0f;
@@ -91,13 +91,18 @@ public class Wave_Manager : MonoBehaviour
                 GameObject.FindGameObjectWithTag("Runner") == null &&
                 GameObject.FindGameObjectWithTag("Breaker") == null)
             {
-                if (currentWave < waves.Length - 1)
+                if (currentWave < waves.Length)
                 {
                     gameManager.Wave++;
                     gameManager.Gold += waves[currentWave].reward;
 
                     currentEnemy = 0;
                     lastSpawnTime = Time.time;
+                }
+                else
+                {
+                    winPanel.SetActive(true);
+                    Time.timeScale = 0.0f;
                 }
             }
             else

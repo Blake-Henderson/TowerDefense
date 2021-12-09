@@ -7,6 +7,10 @@ public class Pause_Menu : MonoBehaviour
 {
     public GameObject pauseMenu;
     public static bool isPaused;
+    private void Start()
+    {
+        isPaused = false;
+    }
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -30,16 +34,19 @@ public class Pause_Menu : MonoBehaviour
 
     public void nextLevel()
     {
+        isPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
     public void retry()
     {
+        isPaused = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public void mainMenu()
     {
+        isPaused = false;
         SceneManager.LoadScene("Main_Menu");
     }
 }

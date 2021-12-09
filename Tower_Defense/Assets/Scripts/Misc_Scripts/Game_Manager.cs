@@ -61,7 +61,7 @@ public class Game_Manager : MonoBehaviour
         set
         {
             wave = value;
-            waveText.text = "WAVE: " + (wave + 1);
+            waveText.text = "WAVE: " + (wave + 1) + "/5";
         }
     }
 

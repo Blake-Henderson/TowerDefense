@@ -931,14 +931,14 @@ MonoBehaviour:
     fireRate: 1.5
     range: 3.5
     maxHealth: 150
-  - cost: 150
+  - cost: 250
     visual: {fileID: 3868220725517916234}
     bullet: {fileID: 1847016689689328346, guid: 50ba531239edcc041aa6d1a1d1391154, type: 3}
     damage: 15
     fireRate: 1.5
     range: 3.5
     maxHealth: 200
-  - cost: 300
+  - cost: 400
     visual: {fileID: 7914803341091520082}
     bullet: {fileID: 1213454617477364295, guid: f6494e17bd3a0e042a16b3820bb66754, type: 3}
     damage: 20
