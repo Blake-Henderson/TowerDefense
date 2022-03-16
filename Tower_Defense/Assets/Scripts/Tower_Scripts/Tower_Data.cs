@@ -54,6 +54,10 @@ public class Tower_Data : MonoBehaviour
     /// </summary>
     public int currentLevelIndex = 0;
     /// <summary>
+    /// The name of the type of tower
+    /// </summary>
+    public string towerName = "Tower";
+    /// <summary>
     /// The health of the tower
     /// </summary>
     public Health_Bar health;

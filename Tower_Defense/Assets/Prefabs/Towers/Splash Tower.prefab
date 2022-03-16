@@ -946,6 +946,7 @@ MonoBehaviour:
     range: 3.5
     maxHealth: 250
   currentLevelIndex: 0
+  towerName: Splash
   health: {fileID: 5325856490363552311}
 --- !u!58 &5754798702434326939
 CircleCollider2D:

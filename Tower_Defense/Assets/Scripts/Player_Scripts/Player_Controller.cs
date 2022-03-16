@@ -148,7 +148,7 @@ public class Player_Controller : MonoBehaviour
     /// </summary>
     void tryShooting()
     {
-        if (Input.GetMouseButtonDown(0) && shotTimer >= fireRate)
+        if (Input.GetMouseButton(0) && shotTimer >= fireRate)
         {
             animator.SetTrigger("Attack");
             animator.SetBool("Moving Right", false);

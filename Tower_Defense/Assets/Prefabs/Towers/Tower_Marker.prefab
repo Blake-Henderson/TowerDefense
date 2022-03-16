@@ -405,9 +405,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Splash
-
-    200'
+  m_Text: Test
 --- !u!1 &4797114389042873315
 GameObject:
   m_ObjectHideFlags: 0
@@ -543,6 +541,10 @@ MonoBehaviour:
   - {fileID: 1515310275088305559}
   - {fileID: 1115366696696366626}
   - {fileID: 946273205940805575}
+  towers:
+  - {fileID: 5798548594289748118, guid: 866a2d0b54e792443959ca5edd399bdc, type: 3}
+  - {fileID: 4700086094679674597, guid: ce58ab95f852d534a8cfbb303b74993b, type: 3}
+  - {fileID: 5350721683645675072, guid: ba3fd09d6bae5f44e983492b083a6d10, type: 3}
 --- !u!1 &5203241502369282011
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,9 +955,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Arrow
-
-    100'
+  m_Text: Test
 --- !u!1 &7735815876017210680
 GameObject:
   m_ObjectHideFlags: 0
@@ -1167,6 +1167,4 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Crystal
-
-    150'
+  m_Text: Test

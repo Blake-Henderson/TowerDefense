@@ -713,6 +713,7 @@ MonoBehaviour:
     range: 5
     maxHealth: 150
   currentLevelIndex: 0
+  towerName: Arrow
   health: {fileID: 6039395812298005729}
 --- !u!58 &6189114467384493901
 CircleCollider2D:

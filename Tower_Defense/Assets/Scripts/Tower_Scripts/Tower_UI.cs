@@ -24,7 +24,7 @@ public class Tower_UI : MonoBehaviour
         }
         else
         {
-            if (tower.getNextLevel() != null)
+            if (tower.getNextLevel() != null && Input.GetKey(KeyCode.E))
             {
                 canvas.gameObject.SetActive(true);
                 button.transform.position = Camera.main.WorldToScreenPoint(position.transform.position);

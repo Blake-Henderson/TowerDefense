@@ -765,6 +765,7 @@ MonoBehaviour:
     range: 8
     maxHealth: 125
   currentLevelIndex: 0
+  towerName: Cystal
   health: {fileID: 4797077017199164050}
 --- !u!58 &4946848562122498366
 CircleCollider2D:
