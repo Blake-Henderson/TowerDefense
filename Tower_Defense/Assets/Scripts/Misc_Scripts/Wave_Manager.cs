@@ -93,9 +93,8 @@ public class Wave_Manager : MonoBehaviour
             {
                 if (currentWave < waves.Length)
                 {
-                    gameManager.Wave++;
                     gameManager.Gold += waves[currentWave].reward;
-
+                    gameManager.Wave++;
                     currentEnemy = 0;
                     lastSpawnTime = Time.time;
                 }

@@ -10,6 +10,7 @@ using TMPro;
 public class Game_Manager : MonoBehaviour
 {
     public int startingGold = 500;
+    public Wave_Manager wm;
     /// <summary>
     /// The text mesh pro text that displays the gold of the player
     /// </summary>
@@ -61,7 +62,11 @@ public class Game_Manager : MonoBehaviour
         set
         {
             wave = value;
-            waveText.text = "WAVE: " + (wave + 1) + "/5";
+            waveText.text = "WAVE: " + (wave + 1) + "/" + wm.waves.Length;
+            if(wave >= wm.waves.Length)
+            {
+                waveText.text = "WAVE: " + wm.waves.Length + "/" + wm.waves.Length;
+            }
         }
     }
 

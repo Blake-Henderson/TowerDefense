@@ -89,36 +89,39 @@ public class Player_Controller : MonoBehaviour
             animator.SetBool("Facing Left", false);
         }
 
+        if (Input.GetMouseButton(0) && shotTimer >= fireRate)
+        {
+            animator.SetTrigger("Attack");
+            animator.SetBool("Moving Right", false);
+            animator.SetBool("Moving Left", false);
+            shotTimer = 0.0f;
+        }
         if (movement.y > 0)
         {
             animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
             animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
-            tryShooting();
         }
         if (movement.y < 0)
         {
             animator.SetBool("Moving Right", animator.GetBool("Facing Right"));
             animator.SetBool("Moving Left", animator.GetBool("Facing Left"));
-            tryShooting();
         }
         if (movement.x > 0)
         {
             animator.SetBool("Moving Right", true);
             animator.SetBool("Moving Left", false);
-            tryShooting();
         }
         if (movement.x < 0)
         {
             animator.SetBool("Moving Right", false);
             animator.SetBool("Moving Left", true);
-            tryShooting();
         }
         if (movement.x == 0 && movement.y == 0)
         {
             animator.SetBool("Moving Right", false);
             animator.SetBool("Moving Left", false);
-            tryShooting();
         }
+        
     }
     // Update is called once per frame
     void FixedUpdate()
@@ -148,13 +151,7 @@ public class Player_Controller : MonoBehaviour
     /// </summary>
     void tryShooting()
     {
-        if (Input.GetMouseButton(0) && shotTimer >= fireRate)
-        {
-            animator.SetTrigger("Attack");
-            animator.SetBool("Moving Right", false);
-            animator.SetBool("Moving Left", false);
-            shotTimer = 0.0f;
-        }
+       
     }
     /// <summary>
     /// Actually fires a projectile very similar to the firing in the player controller from my previous project
