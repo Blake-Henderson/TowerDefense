@@ -14,6 +14,10 @@ public class Main_Menu_Controler : MonoBehaviour
     {
         UnityEngine.SceneManagement.SceneManager.LoadScene("Tutorial");
     }
+    public void levelButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Level_Select");
+    }
     public void quitButton()
     {
         Application.Quit();

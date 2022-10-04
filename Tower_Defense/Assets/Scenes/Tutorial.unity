@@ -2179,8 +2179,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Movement of the is preformed with the WASD keys. You can aim with the mouse
-    and fire an arrow with the left mouse button. You can pause the game with the
-    Esc key.
+    and fire an arrow with the left mouse button. Enter build mode by holding the
+    E key. You can pause the game with the Esc key.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}

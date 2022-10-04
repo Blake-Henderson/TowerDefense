@@ -95,7 +95,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3ede10cba1f19948a7beb0e1c7c9b5f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  speed: 15
   damage: 0
   target: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
+  despawnTime: 2
