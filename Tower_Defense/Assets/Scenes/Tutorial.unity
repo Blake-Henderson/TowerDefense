@@ -579,7 +579,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1250, y: 0}
+  m_AnchoredPosition: {x: 650, y: 0}
   m_SizeDelta: {x: 850, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &110539416
@@ -1102,7 +1102,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1250, y: 0}
+  m_AnchoredPosition: {x: 650, y: 0}
   m_SizeDelta: {x: 850, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &289029745
@@ -2178,9 +2178,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Movement of the is preformed with the WASD keys. You can aim with the mouse
-    and fire an arrow with the left mouse button. Enter build mode by holding the
-    E key. You can pause the game with the Esc key.
+  m_text: Movement is preformed with the WASD keys. You can aim with the mouse and
+    fire an arrow with the left mouse button. Enter build mode by holding the E key.
+    You can pause the game with the Esc key.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2207,8 +2207,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 12
-  m_fontSizeBase: 12
+  m_fontSize: 16
+  m_fontSizeBase: 16
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -2782,7 +2782,7 @@ MonoBehaviour:
     towers well.  You may secure funds for additional towers by killing enemies.
     You lose when either too many enimeis make it passed your defense or you are
     killed in combat.  Standing in the middle of the path the hoard is taking is
-    a fast path to  a painful deah, so be careful.
+    sure to lead to a painful death, so be careful.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7261,7 +7261,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 1250, y: 0}
+  m_AnchoredPosition: {x: 650, y: 0}
   m_SizeDelta: {x: 850, y: 525}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2076989287
