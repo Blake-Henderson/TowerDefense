@@ -35,6 +35,8 @@ public class Player_Controller : MonoBehaviour
     /// The text that displays the player's health
     /// </summary>
     public TMP_Text healthText;
+    public AudioClip hurtNoise;
+    public AudioClip fireNoise;
     /// <summary>
     /// Where the projectiles are fired from
     /// </summary>
@@ -142,6 +144,7 @@ public class Player_Controller : MonoBehaviour
             if (health > 0)
             {
                 health -= 1;
+                SoundManager.instance.playDeathNoise(hurtNoise);
                 damageTimer = 0.0f;
             }           
         }
@@ -159,6 +162,7 @@ public class Player_Controller : MonoBehaviour
     /// </summary>
     void fire()
     {
+        SoundManager.instance.playFireNoise(fireNoise);
         Vector2 mouseScreen = Input.mousePosition;
         Vector2 mousePos = Camera.main.ScreenToWorldPoint(mouseScreen);
         float angle = Mathf.Atan2(mousePos.y - firePoint.position.y,

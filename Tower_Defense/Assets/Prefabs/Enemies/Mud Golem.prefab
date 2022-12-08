@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 250
+  deathNoise: {fileID: 8300000, guid: d6a0aeb68c366db4eb43a49dc6768545, type: 3}
 --- !u!1 &8095348619692737499
 GameObject:
   m_ObjectHideFlags: 0

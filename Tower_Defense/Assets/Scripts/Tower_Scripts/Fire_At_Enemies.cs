@@ -12,6 +12,7 @@ public class Fire_At_Enemies : MonoBehaviour
     /// The enimies in range
     /// </summary>
     public List<GameObject> enemiesInRange;
+    public AudioClip fireNoise;
     /// <summary>
     /// When the last shot was taken
     /// </summary>
@@ -90,6 +91,8 @@ public class Fire_At_Enemies : MonoBehaviour
 
 
         GameObject newProj = (GameObject)SimplePool.Spawn(projPrefab,firePoint.position,Quaternion.identity);
+        if (fireNoise != null)
+            SoundManager.instance.playFireNoise(fireNoise);
         Projectile bulletComp = newProj.GetComponent<Projectile>();
         bulletComp.damage = towerData.CurrentLevel.damage;
         bulletComp.target = target.gameObject;

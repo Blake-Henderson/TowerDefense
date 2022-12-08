@@ -22,4 +22,9 @@ public class Main_Menu_Controler : MonoBehaviour
     {
         Application.Quit();
     }
+
+    public void creditsButton()
+    {
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Credits");
+    }
 }

@@ -12,6 +12,7 @@ public class Splash_Tower_Fire : MonoBehaviour
     /// The enimies in range
     /// </summary>
     public List<GameObject> enemiesInRange;
+    public AudioClip fireClip;
     /// <summary>
     /// When the last shot was taken
     /// </summary>
@@ -80,7 +81,9 @@ public class Splash_Tower_Fire : MonoBehaviour
 
     void Fire()
     {
-        foreach(GameObject enemy in enemiesInRange)
+        if (fireClip != null)
+            SoundManager.instance.playFireNoise(fireClip);
+        foreach (GameObject enemy in enemiesInRange)
         {
             Transform healthBarTransform = enemy.transform.Find("HealthBar");
             Health_Bar healthBar =

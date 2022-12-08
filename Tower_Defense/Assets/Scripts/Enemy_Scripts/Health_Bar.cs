@@ -10,6 +10,8 @@ public class Health_Bar : MonoBehaviour
 {
     public float maxHealth = 100;
     public float currentHealth = 100;
+
+    public AudioClip deathNoise;
     private float originalScale;
     private Game_Manager game_Manager;
     private void Start()
@@ -31,6 +33,9 @@ public class Health_Bar : MonoBehaviour
         {
             if (currentHealth <= 0)
             {
+                if (deathNoise != null)
+                    SoundManager.instance.playDeathNoise(deathNoise);
+
                 SimplePool.Despawn(gameObject.transform.parent.gameObject);
 
                 game_Manager.Gold += gameObject.transform.parent.gameObject.GetComponent<Enemy_Data>().reward;

@@ -150,7 +150,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
+  m_Offset: {x: 0, y: -0.048526272}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -161,7 +161,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.55, y: 0.85}
+  m_Size: {x: 0.55, y: 0.8529475}
   m_EdgeRadius: 0
 --- !u!61 &6185504740520209540
 BoxCollider2D:
@@ -229,3 +229,5 @@ MonoBehaviour:
   iTime: 0.5
   losePanel: {fileID: 0}
   healthText: {fileID: 0}
+  hurtNoise: {fileID: 8300000, guid: cc195ae8eb20e0342b6e9ec27ca339e9, type: 3}
+  fireNoise: {fileID: 8300000, guid: 0eedfbe787db86441954d346202d4962, type: 3}

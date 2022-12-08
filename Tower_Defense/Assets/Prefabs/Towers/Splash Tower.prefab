@@ -179,6 +179,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 250
+  deathNoise: {fileID: 0}
 --- !u!1 &3868220725517916234
 GameObject:
   m_ObjectHideFlags: 0
@@ -924,21 +925,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   levels:
-  - cost: 200
+  - cost: 250
     visual: {fileID: 579302678680403275}
     bullet: {fileID: 5870529251995932436, guid: 35b8c0fff9021fb478328fd83f271f8d, type: 3}
     damage: 10
     fireRate: 2
     range: 3.5
     maxHealth: 150
-  - cost: 250
+  - cost: 300
     visual: {fileID: 3868220725517916234}
     bullet: {fileID: 1847016689689328346, guid: 50ba531239edcc041aa6d1a1d1391154, type: 3}
     damage: 15
     fireRate: 2
     range: 3.5
     maxHealth: 200
-  - cost: 400
+  - cost: 450
     visual: {fileID: 7914803341091520082}
     bullet: {fileID: 1213454617477364295, guid: f6494e17bd3a0e042a16b3820bb66754, type: 3}
     damage: 20
@@ -977,6 +978,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
+  fireClip: {fileID: 8300000, guid: 5a4aee85a2e9cd949aa22961f48ed045, type: 3}
 --- !u!1 &7914803341091520082
 GameObject:
   m_ObjectHideFlags: 0

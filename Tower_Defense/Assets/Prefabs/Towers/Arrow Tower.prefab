@@ -209,6 +209,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 250
+  deathNoise: {fileID: 0}
 --- !u!1 &2738576343403321764
 GameObject:
   m_ObjectHideFlags: 0
@@ -744,6 +745,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemiesInRange: []
+  fireNoise: {fileID: 8300000, guid: fe797710388d6d54ea85224b185bc044, type: 3}
 --- !u!1 &8641853018452566148
 GameObject:
   m_ObjectHideFlags: 0

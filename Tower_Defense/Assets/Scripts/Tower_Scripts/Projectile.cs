@@ -50,7 +50,7 @@ public class Projectile : MonoBehaviour
     {
         float timeInterval = Time.time - startTime;
 
-        if (target != null)
+        if (target != null && target.transform.Find("HealthBar").gameObject.GetComponent<Health_Bar>().currentHealth > 0)
         {
             gameObject.transform.position = Vector3.Lerp(startPosition, target.transform.position, timeInterval * speed / distance);
 

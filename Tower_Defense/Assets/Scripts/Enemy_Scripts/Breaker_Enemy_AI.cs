@@ -51,6 +51,7 @@ public class Breaker_Enemy_AI : MonoBehaviour
     {
         attackTimer = 0.0f;
         retargetTimer = 0.0f;
+        retarget();
     }
 
     // Update is called once per frame
@@ -58,9 +59,10 @@ public class Breaker_Enemy_AI : MonoBehaviour
     {
         attackTimer += Time.deltaTime;
         retargetTimer += Time.deltaTime;
-        if(target == null || (retargetTimer >= retargetRate && targetsPlayer))
+        if(target == null || retargetTimer >= retargetRate)
         {
             retarget();
+            retargetTimer = 0f;
         }
     }
 

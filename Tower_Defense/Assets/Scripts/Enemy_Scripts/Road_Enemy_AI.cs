@@ -27,6 +27,7 @@ public class Road_Enemy_AI : MonoBehaviour
     /// The speed of the enemy
     /// </summary>
     private float speed = 1.0f;
+
     private void Start()
     {
         lastWaypointSwitchTime = Time.time;
