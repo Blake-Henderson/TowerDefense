@@ -1911,7 +1911,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: The crystal tower is the perfect combination of arcane and natural magics.
-    It is perfect for taking down slow tough enemies
+    It is ideal for taking down slow, tough enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2776,13 +2776,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: You may place towers on designated places. However, make your  choice carefully
-    as once you place a tower it is there until it is destroyed. After a tower is
-    destroyed the ground will be too unstable to construct another, so guard your
-    towers well.  You may secure funds for additional towers by killing enemies.
-    You lose when either too many enimeis make it passed your defense or you are
-    killed in combat.  Standing in the middle of the path the hoard is taking is
-    sure to lead to a painful death, so be careful.
+  m_text: You may place towers on designated places. However, make your choice carefully,
+    as once you place a tower, it is there until it is destroyed. After a tower is
+    destroyed, the ground will be too unstable to construct another, so guard your
+    towers well. You may secure funds for additional towers by killing enemies. You
+    lose when either too many enemies make it passed your defense, or you are killed
+    in combat. Standing in the middle of the path the hoard is taking is sure to
+    lead to a painful death, so be careful.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4261,7 +4261,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: The arrow tower is a good multipurpose tower. It however lacks the firepower
+  m_text: The arrow tower is a good multipurpose tower. It, however lacks the firepower
     to take down tougher enemies
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4396,8 +4396,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Be it burning oil, lava, or acid the splash tower burns all in its wake.
-    It is the only tower that is able to damage breaker enemies
+  m_text: The splash tower burns all in its wake, with burning oil, lava, or acid.
+    It is the only tower that can damage breaker enemies.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
