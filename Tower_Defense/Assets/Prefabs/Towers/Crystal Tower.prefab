@@ -747,21 +747,21 @@ MonoBehaviour:
   - cost: 150
     visual: {fileID: 248123304590820846}
     bullet: {fileID: 4703126429632137330, guid: b72ae489979b7da4c87827099671bdcc, type: 3}
-    damage: 60
+    damage: 55
     fireRate: 2.5
     range: 7
     maxHealth: 100
   - cost: 200
     visual: {fileID: 4527582322832187631}
     bullet: {fileID: 8514105437889038367, guid: 418a3a3c8eb9d6c4bb02e3a62c627a3e, type: 3}
-    damage: 75
+    damage: 70
     fireRate: 2
     range: 7
     maxHealth: 100
   - cost: 300
     visual: {fileID: 7398461836591957751}
     bullet: {fileID: 1920776143455685477, guid: 15a8988f070f3dc44b7bf5528e39d5be, type: 3}
-    damage: 95
+    damage: 90
     fireRate: 2
     range: 8
     maxHealth: 125

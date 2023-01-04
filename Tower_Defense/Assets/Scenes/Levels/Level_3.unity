@@ -1428,7 +1428,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6733642450214468029, guid: b96a4f3c2448b2544a0292cf10fe3f3b, type: 3}
       propertyPath: m_Enabled
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6733642450214468029, guid: b96a4f3c2448b2544a0292cf10fe3f3b, type: 3}
       propertyPath: m_UpscaleRT
