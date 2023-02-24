@@ -1,7 +1,7 @@
 //This script is a modified version of the code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:11/3/21
+//Date:2/23/23
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -148,9 +148,5 @@ public class Tower_Data : MonoBehaviour
     public void takeDamage(int damage)
     {
         health.currentHealth -= damage;
-        if(health.currentHealth <= 0)
-        {
-            Destroy(gameObject.transform.parent);
-        }
     }
 }

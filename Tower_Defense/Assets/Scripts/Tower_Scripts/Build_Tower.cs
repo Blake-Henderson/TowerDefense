@@ -1,10 +1,11 @@
 //This script is a modified version of the code found at
 //https://www.raywenderlich.com/269-how-to-create-a-tower-defense-game-in-unity-part-1#toc-anchor-018
 //Author:Blake Henderson
-//Date:11/10/21
+//Date:2/23/23
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class Build_Tower : MonoBehaviour
 {
@@ -34,10 +35,12 @@ public class Build_Tower : MonoBehaviour
                marker.transform.position,
                Quaternion.identity);
             gameManager.Gold -= tower.GetComponentInChildren<Tower_Data>().CurrentLevel.cost;
+            //Get the physical boundries of the tower and updates the pathfinding with those boundries
+            AstarPath.active.UpdateGraphs(tower.transform.GetChild(0).GetComponent<BoxCollider2D>().bounds);
             marker.SetActive(false);
             foreach(GameObject breaker in GameObject.FindGameObjectsWithTag("Breaker"))
             {
-
+                breaker.GetComponent<Breaker_Enemy_AI>().retarget();
             }
         }
     }

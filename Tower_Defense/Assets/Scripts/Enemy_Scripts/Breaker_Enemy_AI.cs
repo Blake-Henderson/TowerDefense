@@ -1,11 +1,12 @@
 //This code was written with help of this tutorial
 //https://www.youtube.com/watch?v=jvtFUfJ6CP8
 //Author:Blake Henderson
-//Date:12/5/21
+//Date:2/23/23
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using Pathfinding;
 
 public class Breaker_Enemy_AI : MonoBehaviour
 {
@@ -29,6 +30,8 @@ public class Breaker_Enemy_AI : MonoBehaviour
     /// How often the enemy attempts to recalibrate its target
     /// </summary>
     public float retargetRate = 5.0f;
+
+    public Health_Bar health;
     /// <summary>
     /// List of all potential targets
     /// </summary>
@@ -46,11 +49,18 @@ public class Breaker_Enemy_AI : MonoBehaviour
     /// keeps track of time between retargeting
     /// </summary>
     private float retargetTimer = 0.0f;
+    /// <summary>
+    /// The speed of the enemy
+    /// </summary>
+    private float speed = 1.0f;
     // Start is called before the first frame update
     public void init()
     {
         attackTimer = 0.0f;
         retargetTimer = 0.0f;
+        speed = gameObject.GetComponent<Enemy_Data>().speed;
+        health.currentHealth = health.maxHealth;
+
         retarget();
     }
 
@@ -78,7 +88,7 @@ public class Breaker_Enemy_AI : MonoBehaviour
             potentialTargets.Add(GameObject.FindGameObjectWithTag("Player"));
         }
         GameObject closestTarget = potentialTargets[0];
-        float shortestDistance = 99999.0f;
+        float shortestDistance = float.MaxValue;
         foreach(GameObject temp in potentialTargets)
         {
             float distance = Vector3.Distance(gameObject.transform.position, temp.transform.position);

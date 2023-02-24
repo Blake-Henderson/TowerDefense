@@ -33,18 +33,26 @@ public class Wave_Manager : MonoBehaviour
     /// </summary>
     private Game_Manager gameManager;
     /// <summary>
-    /// The time that the last enemy spawned
-    /// </summary>
-    private float lastSpawnTime;
-    /// <summary>
     /// The enemy the wave is currently on
     /// </summary>
     private int currentEnemy = 0;
+    /// <summary>
+    /// The time between enemies
+    /// </summary>
+    private float timer;
+    /// <summary>
+    /// How long until the enemy needs to spawn
+    /// </summary>
+    private float spawnDelay;
+    /// <summary>
+    /// The spawn data for the next enemy
+    /// </summary>
+    Spawn_Data NextSpawnData;
     // Start is called before the first frame update
     void Start()
     {
-        lastSpawnTime = Time.time;
         gameManager = GameObject.Find("Game Manager").GetComponent<Game_Manager>();
+        timer = 0;
     }
 
     // Update is called once per frame
@@ -55,29 +63,35 @@ public class Wave_Manager : MonoBehaviour
             int currentWave = gameManager.Wave;
             if (currentWave < waves.Length)
             {
-                float timeInterval = Time.time - lastSpawnTime;
+                timer += Time.deltaTime;
                 if (currentEnemy < waves[currentWave].enemies.Count)
                 {
-                    float spawnInterval = waves[currentWave].enemies[currentEnemy].spawnTime;
+                    NextSpawnData = waves[currentWave].enemies[currentEnemy];
+                    spawnDelay = NextSpawnData.spawnTime;
 
-                    if ((timeInterval > spawnInterval))
-                    {
+                    if (timer >= spawnDelay)
+                    {                        
+                        GameObject newEnemy;
                         //spawn a runner enemy
-                        if (waves[currentWave].enemies[currentEnemy].enemy.gameObject.tag.Equals("Runner"))
+                        if (NextSpawnData.enemy.gameObject.tag.Equals("Runner"))
                         {
-                            lastSpawnTime = Time.time;
-
-                            GameObject newEnemy = (GameObject)SimplePool.Spawn(waves[currentWave].enemies[currentEnemy].enemy,
-                                waves[currentWave].enemies[currentEnemy].path.waypoints[0].transform.position, Quaternion.identity);
+                            newEnemy = SimplePool.Spawn(NextSpawnData.enemy, 
+                                NextSpawnData.path.waypoints[0].transform.position, Quaternion.identity);
                             newEnemy.GetComponent<Road_Enemy_AI>().init();
                             newEnemy.GetComponent<Road_Enemy_AI>().waypoints =
-                                waves[currentWave].enemies[currentEnemy].path.waypoints;
+                                NextSpawnData.path.waypoints;
                         }
                         //spawn a breaker enemey
                         else
                         {
-                            //do nothing for now
+                            //spawns the enemy at a random waypoint on the path
+                            newEnemy = SimplePool.Spawn(NextSpawnData.enemy,
+                                NextSpawnData.path.waypoints[Random.Range(0,
+                                NextSpawnData.path.waypoints.Length)].transform.position,
+                                Quaternion.identity);
+                            newEnemy.GetComponent<Breaker_Enemy_AI>().init();
                         }
+                        timer = 0;
                         currentEnemy++;
                     }
                 }
@@ -96,7 +110,7 @@ public class Wave_Manager : MonoBehaviour
                     gameManager.Gold += waves[currentWave].reward;
                     gameManager.Wave++;
                     currentEnemy = 0;
-                    lastSpawnTime = Time.time;
+                    timer = 0;
                 }
                 else
                 {
