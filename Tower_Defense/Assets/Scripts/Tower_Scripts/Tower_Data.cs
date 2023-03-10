@@ -144,9 +144,4 @@ public class Tower_Data : MonoBehaviour
         health.maxHealth = levels[0].maxHealth;
         health.currentHealth = health.maxHealth;
     }
-
-    public void takeDamage(int damage)
-    {
-        health.currentHealth -= damage;
-    }
 }

@@ -36,7 +36,7 @@ public class Build_Tower : MonoBehaviour
                Quaternion.identity);
             gameManager.Gold -= tower.GetComponentInChildren<Tower_Data>().CurrentLevel.cost;
             //Get the physical boundries of the tower and updates the pathfinding with those boundries
-            AstarPath.active.UpdateGraphs(tower.transform.GetChild(0).GetComponent<BoxCollider2D>().bounds);
+            AstarPath.active.UpdateGraphs(tower.transform.Find("Hitbox").GetComponent<BoxCollider2D>().bounds);
             marker.SetActive(false);
             foreach(GameObject breaker in GameObject.FindGameObjectsWithTag("Breaker"))
             {

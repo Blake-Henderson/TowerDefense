@@ -260,6 +260,7 @@ MonoBehaviour:
   towerDamage: 10
   attackRate: 1
   retargetRate: 5
+  health: {fileID: 5111444109139784360}
   potentialTargets: []
 --- !u!1 &8542086683172981516
 GameObject:

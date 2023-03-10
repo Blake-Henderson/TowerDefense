@@ -35,22 +35,26 @@ public class Health_Bar : MonoBehaviour
             if (deathNoise != null)
                 SoundManager.instance.playDeathNoise(deathNoise);
 
-            SimplePool.Despawn(gameObject.transform.parent.gameObject);
-
             if (gameObject.transform.parent.gameObject.tag == "Runner" || gameObject.transform.parent.gameObject.tag == "Breaker")
             {
                 game_Manager.Gold += gameObject.transform.parent.gameObject.GetComponent<Enemy_Data>().reward;
+                if(gameObject.TryGetComponent<Breaker_Enemy_AI>(out Breaker_Enemy_AI temp))
+                {
+                    temp.CancelInvoke("UpdatePath");
+                }
             }
             else //Must be a tower
             {
-                //Get the physical boundries of the tower and updates the pathfinding with those boundries
-                AstarPath.active.UpdateGraphs(gameObject.transform.GetChild(0).GetComponent<BoxCollider2D>().bounds);
-                //update breakers pathfinding
                 foreach (GameObject breaker in GameObject.FindGameObjectsWithTag("Breaker"))
                 {
                     breaker.GetComponent<Breaker_Enemy_AI>().retarget();
                 }
+                //Get the physical boundries of the tower and updates the pathfinding with those boundries
+                transform.parent.GetChild(0).gameObject.SetActive(false);
+                AstarPath.active.Scan();
+                //update breakers pathfinding                
             }
+            SimplePool.Despawn(gameObject.transform.parent.gameObject);
         }
     }
 }

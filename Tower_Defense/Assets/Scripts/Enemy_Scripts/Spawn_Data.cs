@@ -9,5 +9,5 @@ public class Spawn_Data
 {
     public float spawnTime = 3.0f;
     public GameObject enemy;
-    public Path path;
+    public Road path;
 }
