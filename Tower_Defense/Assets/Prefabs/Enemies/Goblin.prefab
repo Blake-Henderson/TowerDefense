@@ -162,11 +162,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetsPlayer: 1
-  targetsTowers: 0
+  targetsTowers: 1
   nextWayPointDistance: 3
   towerDamage: 10
   attackRate: 1
-  attackRange: 1.5
+  attackRange: 1.65
   retargetRate: 5
   health: {fileID: 3859016750906540488}
   enemyGFX: {fileID: 9169455953629344143}

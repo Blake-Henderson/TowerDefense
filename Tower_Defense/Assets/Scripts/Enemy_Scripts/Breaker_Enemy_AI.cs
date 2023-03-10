@@ -199,13 +199,10 @@ public class Breaker_Enemy_AI : MonoBehaviour
         potentialTargets.Clear();
         //grabs all towers on map
         if (targetsTowers)
-        { 
-            foreach(GameObject Tower in GameObject.FindGameObjectsWithTag("Tower"))
+        {
+            foreach (GameObject Tower in GameObject.FindGameObjectsWithTag("Tower"))
             {
-                if(Tower.transform.Find("Tower").GetComponent<Tower_Data>().health.currentHealth > 0)
-                {
-                    potentialTargets.Add(Tower);
-                }
+                potentialTargets.Add(Tower);
             }
         }
         if (targetsPlayer)

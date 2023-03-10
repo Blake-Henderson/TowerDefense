@@ -45,13 +45,17 @@ public class Health_Bar : MonoBehaviour
             }
             else //Must be a tower
             {
+                transform.parent.tag = "Untagged";
+                foreach(BoxCollider2D c in transform.parent.GetComponents<BoxCollider2D>())
+                {
+                    c.enabled = false;
+                }
+                AstarPath.active.Scan();
                 foreach (GameObject breaker in GameObject.FindGameObjectsWithTag("Breaker"))
                 {
                     breaker.GetComponent<Breaker_Enemy_AI>().retarget();
                 }
                 //Get the physical boundries of the tower and updates the pathfinding with those boundries
-                transform.parent.GetChild(0).gameObject.SetActive(false);
-                AstarPath.active.Scan();
                 //update breakers pathfinding                
             }
             SimplePool.Despawn(gameObject.transform.parent.gameObject);
