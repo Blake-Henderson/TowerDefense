@@ -27,10 +27,6 @@ public class Breaker_Enemy_AI : MonoBehaviour
     /// </summary>
     int currentWaypointIndex = 0;
     /// <summary>
-    /// Has the AI reached the end of the current path
-    /// </summary>
-    bool reachedEndOfPath = false;
-    /// <summary>
     /// How much damage the enemy does to a tower
     /// </summary>
     public int towerDamage = 10;
@@ -95,7 +91,6 @@ public class Breaker_Enemy_AI : MonoBehaviour
         speed = gameObject.GetComponent<Enemy_Data>().speed;
         health.currentHealth = health.maxHealth;
         currentWaypointIndex = 0;
-        reachedEndOfPath = false;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
 
@@ -152,12 +147,7 @@ public class Breaker_Enemy_AI : MonoBehaviour
 
         if (currentWaypointIndex >= path.vectorPath.Count)
         {
-            reachedEndOfPath = true;
             return;
-        }
-        else
-        {
-            reachedEndOfPath = false;
         }
 
         Vector2 direction = ((Vector2)path.vectorPath[currentWaypointIndex] - rb.position).normalized;
