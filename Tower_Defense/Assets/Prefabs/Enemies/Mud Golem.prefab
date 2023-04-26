@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4862968223187548349}
   - component: {fileID: 5751876990658346469}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 6760989434284304535}
   - component: {fileID: 5049847191191095997}
   - component: {fileID: 2559014247554834129}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 7345573653303841334}
   - component: {fileID: 9128912729561003866}
   - component: {fileID: 5692469919913466070}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Mud Golem
   m_TagString: Runner
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7911306818558192352}
   - component: {fileID: 8210731355384422169}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}

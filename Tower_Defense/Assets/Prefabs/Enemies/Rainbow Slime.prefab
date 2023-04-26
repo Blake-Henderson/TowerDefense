@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2492160996153979926}
   - component: {fileID: 2334797711929975765}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: -2754044338514320596}
   - component: {fileID: -6626378244195345681}
   - component: {fileID: 521377281855939541}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rainbow Slime
   m_TagString: Runner
   m_Icon: {fileID: 0}
@@ -225,7 +225,7 @@ GameObject:
   - component: {fileID: 2669307327455935617}
   - component: {fileID: 5749285744961613347}
   - component: {fileID: 9188932188427576177}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -322,7 +322,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3705518546669795135}
   - component: {fileID: 7700578369691542025}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}

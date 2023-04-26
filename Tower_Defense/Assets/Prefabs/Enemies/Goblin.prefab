@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9169455953629344143}
   - component: {fileID: 3115371639392643238}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -98,7 +98,7 @@ GameObject:
   - component: {fileID: 3247964134597562959}
   - component: {fileID: 2251334571671482043}
   - component: {fileID: 352260254963288927}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Goblin
   m_TagString: Breaker
   m_Icon: {fileID: 0}
@@ -283,7 +283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6404776808034145031}
   - component: {fileID: 7493705367621178644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +366,7 @@ GameObject:
   - component: {fileID: 2658823932791845129}
   - component: {fileID: 1046889394816772377}
   - component: {fileID: 3859016750906540488}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}

@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8320924425335795482}
   - component: {fileID: 5294926191878309541}
   - component: {fileID: 7489668588905888829}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -108,7 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6958697410609587747}
   - component: {fileID: 3669006512770696763}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 2673798805434848549}
   - component: {fileID: 5544092795957559647}
   - component: {fileID: -3095472742550313772}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Wolf
   m_TagString: Runner
   m_Icon: {fileID: 0}
@@ -307,7 +307,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7502889114057070543}
   - component: {fileID: 7563431481016515537}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
