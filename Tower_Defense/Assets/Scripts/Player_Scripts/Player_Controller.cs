@@ -143,19 +143,17 @@ public class Player_Controller : MonoBehaviour
         {
             if (health > 0)
             {
-                health -= 1;
-                SoundManager.instance.playDeathNoise(hurtNoise);
+                takeDamage();
                 damageTimer = 0.0f;
             }           
         }
     }
-    /// <summary>
-    /// Tries to fire a projectile
-    /// </summary>
-    void tryShooting()
+    public void takeDamage()
     {
-       
+        health -= 1;
+        SoundManager.instance.playDeathNoise(hurtNoise);
     }
+
     /// <summary>
     /// Actually fires a projectile very similar to the firing in the player controller from my previous project
     /// https://github.com/Blake-Henderson/Midterm_2D_Game

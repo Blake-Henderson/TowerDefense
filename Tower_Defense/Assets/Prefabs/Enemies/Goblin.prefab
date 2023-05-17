@@ -167,6 +167,7 @@ MonoBehaviour:
   towerDamage: 10
   attackRate: 1
   attackRange: 1.65
+  towerAttackSFX: {fileID: 0}
   retargetRate: 5
   health: {fileID: 3859016750906540488}
   enemyGFX: {fileID: 9169455953629344143}
@@ -452,4 +453,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 100
   currentHealth: 100
-  deathNoise: {fileID: 0}
+  deathNoise: {fileID: 8300000, guid: 8843cd0afc399944c97715f1a4e15b28, type: 3}

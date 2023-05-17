@@ -39,6 +39,10 @@ public class Breaker_Enemy_AI : MonoBehaviour
     /// </summary>
     public float attackRange = 1.5f;
     /// <summary>
+    /// The noise that plays when hitting a tower
+    /// </summary>
+    public AudioClip towerAttackSFX;
+    /// <summary>
     /// How often the enemy attempts to recalibrate its target
     /// </summary>
     public float retargetRate = 5.0f;
@@ -135,10 +139,12 @@ public class Breaker_Enemy_AI : MonoBehaviour
                 if (target.tag == "Tower")
                 {
                     target.transform.Find("Tower").GetComponent<Tower_Data>().health.currentHealth -= towerDamage;
+                    if (towerAttackSFX != null)
+                        SoundManager.instance.playFireNoise(towerAttackSFX);
                 }
                 else
                 {
-                    target.GetComponent<Player_Controller>().health -= 1;
+                    target.GetComponent<Player_Controller>().takeDamage();
                 }
                 attackTimer = 0f;
             }
