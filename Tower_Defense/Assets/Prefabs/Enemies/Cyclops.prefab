@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4590928746220048228}
   - component: {fileID: 3733501535081247077}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: HealthBarBackground
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -93,7 +93,7 @@ GameObject:
   - component: {fileID: 3481205413516193743}
   - component: {fileID: 2789615804221279693}
   - component: {fileID: 8296188311906058284}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: HealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 3532844638929394737}
   - component: {fileID: 2338873061102705473}
   - component: {fileID: 3851816201479978093}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Cyclops
   m_TagString: Breaker
   m_Icon: {fileID: 0}
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   reward: 20
   speed: 30
-  health: 300
+  health: 200
 --- !u!114 &6810199083523724620
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -358,7 +358,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.05}
+  m_Offset: {x: 0, y: 0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -369,7 +369,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.2, y: 1.8}
+  m_Size: {x: 0.3, y: 0.3}
   m_EdgeRadius: 0
 --- !u!1 &8450961779943314080
 GameObject:
@@ -381,7 +381,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1669633446214702708}
   - component: {fileID: 6650515038398380620}
-  m_Layer: 6
+  m_Layer: 8
   m_Name: Sprite
   m_TagString: Breaker
   m_Icon: {fileID: 0}

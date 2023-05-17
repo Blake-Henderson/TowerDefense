@@ -113,9 +113,8 @@ public class Breaker_Enemy_AI : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (target == null || (targetsTowers && targetsPlayer))
+        if (target == null || targetsTowers)
         {
-            attackTimer += Time.deltaTime;
             retargetTimer += Time.deltaTime;
             if (retargetTimer >= retargetRate)
             {
@@ -124,18 +123,26 @@ public class Breaker_Enemy_AI : MonoBehaviour
             }
         }
         attackTimer += Time.deltaTime;
-        if (Vector2.Distance(transform.position, target.transform.position) <= attackRange && attackTimer >= attackRate)
+        if(attackTimer >= attackRate)
         {
-            if (target.tag == "Tower")
+            Vector3 temp = target.transform.position;
+            if(target.tag == "Tower")
             {
-                target.transform.Find("Tower").GetComponent<Tower_Data>().health.currentHealth -= towerDamage;
+                temp.y += 0.5f;
             }
-            else
+            if (Vector2.Distance(transform.position, temp) <= attackRange)
             {
-                target.GetComponent<Player_Controller>().health -= 1;
+                if (target.tag == "Tower")
+                {
+                    target.transform.Find("Tower").GetComponent<Tower_Data>().health.currentHealth -= towerDamage;
+                }
+                else
+                {
+                    target.GetComponent<Player_Controller>().health -= 1;
+                }
+                attackTimer = 0f;
             }
-            attackTimer = 0f;
-        }
+        }        
     }
 
     private void FixedUpdate()
@@ -209,11 +216,22 @@ public class Breaker_Enemy_AI : MonoBehaviour
         float shortestDistance = float.MaxValue;
         foreach (GameObject temp in potentialTargets)
         {
-            float distance = Vector3.Distance(gameObject.transform.position, temp.transform.position);
-            if (distance <= shortestDistance)
+            try
             {
-                closestTarget = temp;
-                shortestDistance = distance;
+                float distance = Vector3.Distance(gameObject.transform.position, temp.transform.position);
+                if (temp.tag == "Player")
+                {
+                    distance -= 2.5f;
+                }
+                if (distance <= shortestDistance)
+                {
+                    closestTarget = temp;
+                    shortestDistance = distance;
+                }
+            }
+            catch
+            {
+                // if we're here target was destroyed
             }
         }
         target = closestTarget;

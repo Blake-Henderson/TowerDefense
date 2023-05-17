@@ -97,6 +97,7 @@ GameObject:
   - component: {fileID: -2754044338514320596}
   - component: {fileID: -6626378244195345681}
   - component: {fileID: 521377281855939541}
+  - component: {fileID: 3420102154971151033}
   m_Layer: 6
   m_Name: Rainbow Slime
   m_TagString: Runner
@@ -172,7 +173,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.1}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.1
 --- !u!114 &-2754044338514320596
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,6 +215,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   sprite: {fileID: 2334797711929975765}
   minimumColor: 0.1
+--- !u!58 &3420102154971151033
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2117184512330957778}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: -0.1}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &2798993332535966316
 GameObject:
   m_ObjectHideFlags: 0

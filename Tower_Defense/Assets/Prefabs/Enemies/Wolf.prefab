@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 2673798805434848549}
   - component: {fileID: 5544092795957559647}
   - component: {fileID: -3095472742550313772}
+  - component: {fileID: 385013972119285902}
   m_Layer: 6
   m_Name: Wolf
   m_TagString: Runner
@@ -269,7 +270,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.5
+  m_Radius: 0.1
 --- !u!114 &5544092795957559647
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +298,22 @@ MonoBehaviour:
   reward: 10
   speed: 3
   health: 75
+--- !u!58 &385013972119285902
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3309450937278305357}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &6669979875373401794
 GameObject:
   m_ObjectHideFlags: 0

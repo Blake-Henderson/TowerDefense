@@ -53,7 +53,14 @@ public class Health_Bar : MonoBehaviour
                 AstarPath.active.Scan();
                 foreach (GameObject breaker in GameObject.FindGameObjectsWithTag("Breaker"))
                 {
-                    breaker.GetComponent<Breaker_Enemy_AI>().retarget();
+                    try
+                    {
+                        breaker.GetComponent<Breaker_Enemy_AI>().retarget();
+                    }
+                    catch
+                    {
+                        //do nothing enemy dead
+                    }
                 }
                 //Get the physical boundries of the tower and updates the pathfinding with those boundries
                 //update breakers pathfinding                

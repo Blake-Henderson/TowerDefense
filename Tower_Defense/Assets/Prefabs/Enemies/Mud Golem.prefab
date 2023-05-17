@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 7345573653303841334}
   - component: {fileID: 9128912729561003866}
   - component: {fileID: 5692469919913466070}
+  - component: {fileID: 3643415408374830033}
   m_Layer: 6
   m_Name: Mud Golem
   m_TagString: Runner
@@ -269,7 +270,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 0.6
+  m_Radius: 0.1
 --- !u!114 &9128912729561003866
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -297,6 +298,22 @@ MonoBehaviour:
   reward: 15
   speed: 1.5
   health: 350
+--- !u!58 &3643415408374830033
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8095348619692737499}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
 --- !u!1 &8928354379546387681
 GameObject:
   m_ObjectHideFlags: 0
