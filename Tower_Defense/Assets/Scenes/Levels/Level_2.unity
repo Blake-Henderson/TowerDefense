@@ -27441,7 +27441,7 @@ MonoBehaviour:
     - spawnTime: 1
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
       path: {fileID: 1334489343}
-    - spawnTime: 2
+    - spawnTime: 1
       enemy: {fileID: 5075698073354910361, guid: abbe2144cb7713a4e8f5a3c2c4b05c31, type: 3}
       path: {fileID: 547518447}
     - spawnTime: 0.5

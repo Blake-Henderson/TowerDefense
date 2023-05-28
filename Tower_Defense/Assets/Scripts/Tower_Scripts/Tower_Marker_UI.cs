@@ -8,12 +8,14 @@ using UnityEngine.UI;
 public class Tower_Marker_UI : MonoBehaviour
 {
     public Canvas canvas;
+    public GameObject highlight;
     public List<GameObject> positions;
     public List<Button> buttons;
     public List<GameObject> towers;
     // Start is called before the first frame update
     void Start()
-    {        
+    {
+        highlight.SetActive(false);
         canvas.gameObject.SetActive(false);
         for (int i = 0; i < buttons.Count; i++)
         {
@@ -21,6 +23,17 @@ public class Tower_Marker_UI : MonoBehaviour
             buttons[i].gameObject.GetComponentInChildren<Text>().text = 
                 towers[i].GetComponentInChildren<Tower_Data>().towerName + '\n' + 
                 towers[i].GetComponentInChildren<Tower_Data>().levels[0].cost;
+        }
+    }
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.E))
+        {
+            highlight.SetActive(true);
+        }
+        else
+        {
+            highlight.SetActive(false);
         }
     }
     private void OnMouseOver()

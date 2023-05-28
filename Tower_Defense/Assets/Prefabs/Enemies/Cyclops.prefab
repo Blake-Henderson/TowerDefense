@@ -233,7 +233,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   reward: 20
-  speed: 30
+  speed: 25
   health: 200
 --- !u!114 &6810199083523724620
 MonoBehaviour:
