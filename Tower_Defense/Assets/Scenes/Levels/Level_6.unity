@@ -29526,7 +29526,7 @@ MonoBehaviour:
     - spawnTime: 1
       enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
       path: {fileID: 704345290}
-    reward: 100
+    reward: 50
   - enemies:
     - spawnTime: 5
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
@@ -29627,7 +29627,7 @@ MonoBehaviour:
     - spawnTime: 0.5
       enemy: {fileID: 8095348619692737499, guid: 2f4b6c003b1c1174eb37a8e1c443702f, type: 3}
       path: {fileID: 704345290}
-    reward: 100
+    reward: 50
   - enemies:
     - spawnTime: 5
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
@@ -29818,7 +29818,7 @@ MonoBehaviour:
     - spawnTime: 1
       enemy: {fileID: 2117184512330957778, guid: 36551ccaf887d84459669066727a7d4b, type: 3}
       path: {fileID: 704345290}
-    reward: 150
+    reward: 75
   - enemies:
     - spawnTime: 5
       enemy: {fileID: 8095348619692737499, guid: 2f4b6c003b1c1174eb37a8e1c443702f, type: 3}
@@ -29985,7 +29985,7 @@ MonoBehaviour:
     - spawnTime: 1
       enemy: {fileID: 8095348619692737499, guid: 2f4b6c003b1c1174eb37a8e1c443702f, type: 3}
       path: {fileID: 704345290}
-    reward: 200
+    reward: 100
   - enemies:
     - spawnTime: 5
       enemy: {fileID: 3309450937278305357, guid: b18ac8b0bb12dd64aa7a331599c5c576, type: 3}
