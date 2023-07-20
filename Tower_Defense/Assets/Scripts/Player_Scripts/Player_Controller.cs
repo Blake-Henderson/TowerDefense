@@ -147,6 +147,14 @@ public class Player_Controller : MonoBehaviour
                 damageTimer = 0.0f;
             }           
         }
+        if(collision.tag == "Breaker" && damageTimer >= iTime && collision.gameObject.GetComponent<Breaker_Enemy_AI>().targetsPlayer)
+        {
+            if (health > 0)
+            {
+                takeDamage();
+                damageTimer = 0.0f;
+            }
+        }
     }
     public void takeDamage()
     {

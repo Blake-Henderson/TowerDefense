@@ -144,7 +144,7 @@ public class Breaker_Enemy_AI : MonoBehaviour
                 }
                 else
                 {
-                    target.GetComponent<Player_Controller>().takeDamage();
+                    //target.GetComponent<Player_Controller>().takeDamage();
                 }
                 attackTimer = 0f;
             }
