@@ -6508,13 +6508,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Range:Average
+  m_text: 'Range: Average
 
 
-    Fire Rate: Fast
+    Fire Rate: Slow
 
 
-    Damage:Average
+    Damage: Low (AOE)
 
 
     Range:
@@ -6865,13 +6865,13 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Range:Average
+  m_text: 'Range: Average
 
 
     Fire Rate: Fast
 
 
-    Damage:Average'
+    Damage: Average'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -7008,7 +7008,7 @@ MonoBehaviour:
   m_text: 'Range: Large
 
 
-    Fire Rate: Slow
+    Fire Rate: Average
 
 
     Damage: High'
